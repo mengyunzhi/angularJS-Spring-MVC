@@ -4,9 +4,13 @@
 
 本系统包括登录与注销、教师管理、班级管理、学生管理和课程管理等功能模块。
 
+![](/assets/save.png)
+
 通过对本教程的学习，我们将MVC的编程思想，E-R图等基本知识有所掌握；对面向对象的编程方法有更深入的了解与掌握；对如何使用angular和springMVC来开发中小型系统有了更深入的认识；能够使用angular和springMVC框架开发小型系统。
 
 angular和springMVC官方手册的知识点覆盖很全，但应该并不适合新手学习，特别是当我们第一次接触框架这个东西的时候。回想起自己第一次学习angular的时候，感觉完全是在盲人摸象。
+
+![](/assets/chapter0-1.png)
 
 ## 版权申明
 
@@ -18,7 +22,7 @@ angular和springMVC官方手册的知识点覆盖很全，但应该并不适合�
 
 > 本文档版权归河北工业大学梦云智软件开发团队所有，本文档及其描述的内容受有关法律版权保护，对本文档内容，以任何形式进行非法复制、泄露或散布，将导致相应的法律责任。
 
-\[梦云智\]\([https://www.kancloud.cn/manual/thinkphp5/118013](http://www.mengyunzhi.cn/)\) : 一个靠谱的天津地区高校软件开发团队。如果您有意向与我们合作，欢迎您与我们取得联系。
+[http://www.mengyunzhi.cn](http://www.mengyunzhi.cn "梦云智") : 一个靠谱的天津地区高校软件开发团队。如果您有意向与我们合作，欢迎您与我们取得联系。
 
 邮箱: [panjie@yunzhiclub.com](mailto:panjie@yunzhiclub.com)
 
