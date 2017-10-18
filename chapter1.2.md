@@ -39,7 +39,7 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
 
    输入以下命令      sudo /opt/lampp/lampp start
 
-      显示如下结果代表安装成功
+   显示如下结果代表安装成功
 
 ```
   Starting XAMPP for Linux 5.6.23-0...
@@ -47,14 +47,13 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
   XAMPP: Starting Apache...already running.
 
   XAMPP: Starting MySQL...already running.
-  
+
   XAMPP: Starting ProFTPD...ok.
-  
-
-停止XAMPP                 sudo /opt/lampp/xampp stop
-
-启动XAMPP控制面板   sudo /opt/lampp/./manager-linux-x64.run
 ```
+
+     停止xampp
+
+      sudo /opt/lampp/xampp stop
 
 #### windows上安装
 
