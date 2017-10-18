@@ -17,11 +17,11 @@
 
 XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的功能强大的建站集成软件包，允许用戶可以在自己的电脑上轻易的建立网页服务器。在此教程中我们主要使用他的MySQL服务。
 
-点击下面的链接直接通过浏览器下载Xampp for linux版本
-
-[https://www.apachefriends.org/xampp-files/5.6.23/xampp-linux-x64-5.6.23-0-installer.run](https://www.apachefriends.org/xampp-files/5.6.23/xampp-linux-x64-5.6.23-0-installer.run)
-
 #### ubuntu上安装
+
+    点击下面的链接直接通过浏览器下载Xampp for linux版本
+
+     [https://www.apachefriends.org/xampp-files/5.6.23/xampp-linux-x64-5.6.23-0-installer.run](https://www.apachefriends.org/xampp-files/5.6.23/xampp-linux-x64-5.6.23-0-installer.run)
 
 1. 如何安装Xampp?
 
@@ -74,6 +74,4 @@ Step2：安装
 
 Step3：启动mysql  
 说明：MariaDB是开源数据库mysql的替代产品，使用方法与mysql完全相同。
-
-
 
