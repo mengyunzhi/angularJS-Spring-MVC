@@ -51,11 +51,9 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
   XAMPP: Starting ProFTPD...ok.
 ```
 
-```
- 停止xampp
+停止xampp
 
-  sudo /opt/lampp/xampp stop
-```
+sudo /opt/lampp/xampp stop
 
 #### windows上安装
 
