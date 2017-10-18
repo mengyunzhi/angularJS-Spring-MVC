@@ -29,6 +29,7 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
 
    ```
     sudo ./xampp-linux-x64-5.6.23-0-installer.run
+
    ```
 
    按照安装窗口点击下一步即可
@@ -49,6 +50,7 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
   XAMPP: Starting MySQL...already running.
 
   XAMPP: Starting ProFTPD...ok.
+
 ```
 
 停止xampp
@@ -59,7 +61,7 @@ sudo /opt/lampp/xampp stop
 
 XAMPP的官方下载地址
 
-[https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/](https://sourceforge.net/projects/xampp/files/XAMPP Windows/)
+[https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/)
 
 Step1：下载相应版本
 
