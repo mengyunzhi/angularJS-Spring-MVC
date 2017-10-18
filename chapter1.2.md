@@ -1,4 +1,4 @@
-##                                             第二节：xampp
+## 第二节：xampp
 
 访问网页和我们去商场买东西的原理基本是相同的。  
 我们去商场买东西：首先将需求提交给售货员，然后售货员分析我们的需求，并递交给我们想要的商品。
@@ -25,44 +25,45 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
 
 1. 如何安装Xampp?
 
-    进入下载文件所在的位置输入以下命令
+   进入下载文件所在的位置输入以下命令
 
-       zhuchenshu@zhuchenshu-Lenovo-ideapad-500-14ISK:~/下载$ sudo ./xampp-linux-x64-5.6.23-0-installer.run
+   ```
+   zhuchenshu@zhuchenshu-Lenovo-ideapad-500-14ISK:~/下载$ sudo ./xampp-linux-x64-5.6.23-0-installer.run
+   ```
 
    按照安装窗口点击下一步即可
 
-  2. 如何启动XAMPP？
+2. 如何启动XAMPP？
 
-      安装目录在 /opt/lampp/
+   安装目录在 /opt/lampp/
 
-      输入以下命令      sudo /opt/lampp/lampp start
+   输入以下命令      sudo /opt/lampp/lampp start
 
 显示如下结果代表安装成功
 
-    Starting XAMPP for Linux 5.6.23-0...
+```
+Starting XAMPP for Linux 5.6.23-0...
 
-    XAMPP: Starting Apache...already running.
+XAMPP: Starting Apache...already running.
 
-    XAMPP: Starting MySQL...already running.
+XAMPP: Starting MySQL...already running.
 
-    XAMPP: Starting ProFTPD...ok.
+XAMPP: Starting ProFTPD...ok.
 
-    停止XAMPP                 sudo /opt/lampp/xampp stop
+停止XAMPP                 sudo /opt/lampp/xampp stop
 
-    启动XAMPP控制面板   sudo /opt/lampp/./manager-linux-x64.run    
+启动XAMPP控制面板   sudo /opt/lampp/./manager-linux-x64.run    
+```
 
 #### windows上安装
 
 XAMPP的官方下载地址
 
-[https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/)
+[https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/](https://sourceforge.net/projects/xampp/files/XAMPP Windows/)
 
 Step1：下载相应版本
 
 教程中使用的版本为5.6.21，为了最大程度的和教程中示例代码保持统一，请下载该版本。
-
-  
-
 
 ![](https://box.kancloud.cn/c1160a7517d192fa537816576564da39_650x111.png)
 
@@ -71,10 +72,4 @@ Step2：安装
 
 Step3：启动mysql  
 说明：MariaDB是开源数据库mysql的替代产品，使用方法与mysql完全相同。
-
-
-
-  
-
-
 
