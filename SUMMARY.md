@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [序言](chapter0.md)
+* [序言](chapter0/readme.md)
 * [第一章:准备知识](chapter1/chapter1.md)
   * [第一节:node.js](chapter1/chapter1.1.md)
   * [第二节:xampp](chapter1/chapter1.2.md)
