@@ -19,7 +19,7 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
 
 #### ubuntu上安装
 
-点击下面的链接通过浏览器下早xampp的linux版本
+点击下面的链接通过浏览器下载xampp的linux版本
 
 [https://www.apachefriends.org/xampp-files/5.6.23/xampp-linux-x64-5.6.23-0-installer.run](https://www.apachefriends.org/xampp-files/5.6.23/xampp-linux-x64-5.6.23-0-installer.run)
 
