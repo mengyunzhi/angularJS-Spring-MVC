@@ -28,7 +28,7 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
    进入下载文件所在的位置输入以下命令
 
    ```
-   zhuchenshu@zhuchenshu-Lenovo-ideapad-500-14ISK:~/下载$ sudo ./xampp-linux-x64-5.6.23-0-installer.run
+    sudo ./xampp-linux-x64-5.6.23-0-installer.run
    ```
 
    按照安装窗口点击下一步即可
@@ -51,9 +51,11 @@ XAMPP是一个把Apache网页服务器与PHP、Perl及MariaDB集成在一起的�
   XAMPP: Starting ProFTPD...ok.
 ```
 
-     停止xampp
+```
+ 停止xampp
 
-      sudo /opt/lampp/xampp stop
+  sudo /opt/lampp/xampp stop
+```
 
 #### windows上安装
 
