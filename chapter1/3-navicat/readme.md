@@ -2,7 +2,7 @@
 
 Navicat是香港卓软数码科技有限公司生产的一系列MySQL、MariaDB、Oracle、SQLite、PostgreSQL 及Microsoft SQL Server图形化资料库管理及发展软件。
 
-**  windows上安装 **
+**windows上安装**
 
 Navicat官方下载地址：
 
@@ -30,6 +30,7 @@ Navicat官方下载地址：
 
 OK，这样就完啦
 如果使用不顺手，可以选择在ubuntu商店上下载Mysql Workbrench 
+
 ---
 
 作者：朱晨澍
