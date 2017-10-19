@@ -9,7 +9,7 @@ git客户端下载地址为：
 安装完成后，你将在【开始】-【所有程序】中，找到Git为我们安装的三个软件。如下图所示：
 ![](image/2016-06-24_576c8cfd3955e.png) 
 
-**1 .ubuntu上安装
+**2 .ubuntu上安装
 **
 官网上提供的命令是：
 'sudo add-apt-repository ppa:git-core/ppa'
