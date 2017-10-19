@@ -1,11 +1,11 @@
 # 第五节 JDK的安装
 
-` JDK(Java Development Kit)` 是 `太阳微系统 `针对 `Java` 开发人员发布的 `免费软件开发工具包`（SDK，Software development kit）。自从Java推出以来，JDK已经成为使用最广泛的Java SDK。
+` JDK(Java Development Kit)` 是 `Sun Microsystems `针对 `Java` 开发人员发布的 `免费软件开发工具包`（SDK，Software development kit）。它是供 `程序开发者` 进行编译和调试等一系列开发java程序操作的工具包。普通用户如果想运行java程序的话，只需要安装java运行环境： `JRE(Java Runtime Environment)` 就可以了。JDK中包括了完整的JRE。
 
-我这里使用的系统是Ubuntu 16.04。
+下面，以Ubuntu 16.04为例，安装过程如下：
 
 ## 下载
-这里给出jdk的[官方网站](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html),
+jdk的[官方网站为：](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html),
 
 ![jdk download](image/2017-10-19.1.png)
 
@@ -46,8 +46,6 @@ $ sudo gedit /etc/environment
   export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
   export JAVA_HOME=/opt/java/jdk1.8.0_151
 
-`JAVA_HOME` 改成你自己的jdk的路径。
-
 保存，关闭。然后让文件生效。
 
 ```bash
@@ -67,8 +65,6 @@ $ sudo gedit /etc/profile
  export JRE_HOME=$JAVA_HOME/jre
  export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
  export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH`
-
-同样的，`JAVA_HOME` 中也要替换成你自己的路径。
 
 保存，关闭。然后让文件生效。
 
@@ -99,17 +95,22 @@ $ java -version
 依次执行下面的命令：
 
 ```bash
-$ udo update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_151/bin/java 300 
+$ sudo update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_151/bin/java 300 
 $ sudo update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_151/bin/javac 300 
 $ sudo update-alternatives --config java
 ```
-`/opt/java/jdk1.8.0_151` 的位置替换成你自己的文件路径。
+
+`update-alternatives` 是ubuntu中控制软件版本的工具。
+
+前两条命令是为你的java设置一个软链接，`/opt/java/jdk1.8.0_151` 的位置替换成你自己的文件路径。
+
+第三条命令是用来选择你的jdk版本的：
 
 ![config java](image/2017-10-19.5.png)
 
 这里系统会会列出所有的JDK，选择自己刚下载版本对应的数字，回车。
 
-然后在执行命令：
+然后再执行命令：
 
 ```bash
 $ java -version
@@ -118,3 +119,9 @@ $ java -version
 ![right jdk](image/2017-10-19.4.png)
 
 到此为止，jdk就已经配置好了。
+
+官方参考资料：
+
+[JDK 8 and JRE 8 Installation](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
+
+[JDK Installation for Linux Platforms](https://docs.oracle.com/javase/8/docs/technotes/guides/install/linux_jdk.html#BJFGGEFG)
