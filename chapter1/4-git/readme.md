@@ -1,6 +1,6 @@
-##第三节：GIT
-**1 .windows上安装
-**
+## 第三节：GIT
+**1 .windows上安装**
+
 git客户端下载地址为：
 [https://git-scm.com/downloads](https://git-scm.com/downloads) 
 ![](image/2016-06-24_576c8cfd1c3e4.png) 
