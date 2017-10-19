@@ -15,8 +15,8 @@ Navicat官方下载地址：
 下载上图所示版本
 1. 下载 navicat110_mysql_en.tar.gz 文件 
 2. 下载后解压tar文件
-tar -zxvf  /home/rain/download/navicat8_mysql_en.tar.gz  
+`tar -zxvf  /home/rain/download/navicat8_mysql_en.tar.gz`
 3. 解压后  进入解压后的目录运行命令：
-./start_navicat   
+`./start_navicat`
 OK，这样就完啦
 如果使用不顺手，可以选择在ubuntu商店上下载Mysql Workbrench 
