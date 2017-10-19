@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [序言](chapter0/readme.md)
 * [第一章:准备知识](chapter1/chapter1.md)
-  * [第一节:node.js](chapter1/chapter1.1.md)
+  * [第一节:node.js](chapter1/1-node.js/readme.md)
   * [第二节:xampp](chapter1/chapter1.2.md)
   * [第三节:navicate](chapter1/chapter1.3.md)
   * [第四节:GIT](chapter1/chapter1.4.md)
