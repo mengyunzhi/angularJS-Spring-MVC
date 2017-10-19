@@ -25,11 +25,19 @@
 
 ![](image/2.png)
 
-这是`xz`类型的文件包，执行命令`xz -d node-v8.7.0-linux-x64.tar.xz`
+这是`xz`类型的文件包，执行命令
+
+```
+xz -d node-v8.7.0-linux-x64.tar.xz
+```
 
 ![](image/3.png)
 
-文件类型由`.tar.xz`变成了`.tar`，我们再对`tar`文件进行操作，执行命令`tar -xvf node-v8.7.0-linux-x64.tar`。
+文件类型由`.tar.xz`变成了`.tar`，我们再对`tar`文件进行操作，执行命令
+
+```
+tar -xvf node-v8.7.0-linux-x64.tar
+```
 
 ![](image/4.png)
 
@@ -41,7 +49,9 @@
 
 我建议把`Node.js`软件放进`/opt`目录，当然如果不喜欢的话，可以跳过这步。只要环境变量配置正确，在任意目录都是可以用的。
 
-`sudo mv node-v8.7.0-linux-x64/ /opt/nodejs/`
+```
+sudo mv node-v8.7.0-linux-x64/ /opt/nodejs/
+```
 
 ![](image/6.png)
 
@@ -51,13 +61,27 @@
 
 ## 环境变量
 
-编辑配置文件，`gedit ~/.bashrc`，在文件开头处添加`export PATH=$PATH:/opt/nodejs/bin`，来导入我们的路径变量。
+编辑配置文件
 
-注：网上有些教程推荐将路径导入文件结尾处，经测试后发现虽然也能生效，但是会导致系统无法关机。
+```
+gedit ~/.bashrc
+```
+
+添加如下代码，来导入我们的路径变量。
+
+```
+export PATH=$PATH:/opt/nodejs/bin
+```
+
+注：这里推荐在文件开头处导入，网上有些教程推荐将路径导入文件结尾处，经测试后发现虽然也能生效，但是会导致系统无法关机。
 
 ![](image/8.png)
 
-保存，关闭。`source ~/.bashrc`，让该文件生效。
+保存，关闭，并让该文件生效。
+
+```
+source ~/.bashrc
+```
 
 ![](image/9.png)
 
