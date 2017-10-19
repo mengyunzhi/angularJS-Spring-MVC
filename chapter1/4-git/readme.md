@@ -3,8 +3,11 @@
 **1 .windows上安装**
 
 git客户端下载地址为：
+
 [https://git-scm.com/downloads](https://git-scm.com/downloads) 
+
 ![](image/2016-06-24_576c8cfd1c3e4.png) 
+
 在安装过程中，全部选择默认设置，即直接一步步点击【Next】按钮，直至完成安装。
 
 安装完成后，你将在【开始】-【所有程序】中，找到Git为我们安装的三个软件。如下图所示：
