@@ -1,0 +1,1 @@
+安装yeoman及angularjs-generate
