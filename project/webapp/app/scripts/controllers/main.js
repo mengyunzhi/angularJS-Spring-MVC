@@ -8,10 +8,7 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function($scope) {
+    $scope.helloWorld = 'Hello World!';
+    console.log($scope.helloWorld);
   });
