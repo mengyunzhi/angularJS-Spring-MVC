@@ -9,7 +9,7 @@
 
 `cd my-new-project`
 
-执行
+执行，[app-name] 选添，不写系统会给默认值
 
 `yo angular [app-name]`
 
