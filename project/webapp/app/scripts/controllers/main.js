@@ -23,18 +23,16 @@ angular.module('testApp')
       .then(success, error);
 
     var thenTest = function(successCallback, errorCallback) {
-        var successHello = 'hello success callback';
-        var errorHello = 'hello error callback';
-        successCallback(successHello);
-        errorCallback(errorHello);
-    };
-    var successFunction = function(hello) {
-        console.info('sucess recive hello:', hello);
+      var successHello = 'hello success callback';
+      var errorHello = 'hello error callback';
+      successCallback(successHello);
+      errorCallback(errorHello);
     };
 
-    var errorFunction = function(hello) {
-        console.info('error revice hello: ', hello);
-    };
 
-    thenTest(successFunction, errorFunction);
+    thenTest(function success(hello) {
+      console.info('sucess recive hello:', hello);
+    }, function error(hello) {
+      console.info('error revice hello: ', hello);
+    });
   });
