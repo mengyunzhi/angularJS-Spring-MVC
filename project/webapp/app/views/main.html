@@ -1,5 +1,6 @@
 
 <div class="row marketing">
+{{data}}
   <table>
     <tr>
       <th>id</th>
@@ -8,19 +9,12 @@
       <th>email</th>
       <th>username</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>zhangsan</td>
-      <td>0</td>
-      <td>zhangsan@mengyunzhi.com</td>
-      <td>zhangsan</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>lisi</td>
-      <td>1</td>
-      <td>lisi@mengyunzhi.com</td>
-      <td>lisi</td>
+    <tr ng-repeat="_data in data">
+      <td>{{_data.id}}</td>
+      <td>{{_data.name}}</td>
+      <td>{{_data.sex}}</td>
+      <td>{{_data.email}}</td>
+      <td>{{_data.username}}</td>
     </tr>
   </table>
 </div>

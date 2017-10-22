@@ -9,30 +9,20 @@
  */
 angular.module('testApp')
   .controller('MainCtrl', function($scope, $http) {
-    var success = function(response) {
-      $scope.helloWorld = response.data.value;
-      $scope.hi = $scope.helloWorld + ' Hi!';
-    };
-
-    var error = function(response) {
-      console.error('$http -> ' + url + ' error.', response);
-    };
-
-    var url = 'http://localhost:8080/helloWorld';
-    $http.get(url)
-      .then(success, error);
-
-    var thenTest = function(successCallback, errorCallback) {
-      var successHello = 'hello success callback';
-      var errorHello = 'hello error callback';
-      successCallback(successHello);
-      errorCallback(errorHello);
-    };
-
-
-    thenTest(function success(hello) {
-      console.info('sucess recive hello:', hello);
-    }, function error(hello) {
-      console.info('error revice hello: ', hello);
-    });
+    $scope.data = [
+      {
+        id: 1,
+        name: 'zhangsan',
+        sex: 0,
+        email: 'zhangsan@mengyunzhi.com',
+        username: 'zhangsan'
+      },
+      {
+        id: 2,
+        name: 'lisi',
+        sex: 1,
+        email: 'lisi@mengyunzhi.com',
+        username: 'lisi'
+      }
+    ];
   });
