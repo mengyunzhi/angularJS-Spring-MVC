@@ -10,7 +10,7 @@
 angular.module('testApp')
   .controller('MainCtrl', function($scope, $http) {
     var success = function(response) {
-      $scope.helloWorld = response.data;
+      $scope.helloWorld = response.data.value;
       $scope.hi = $scope.helloWorld + ' Hi!';
     };
 
