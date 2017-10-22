@@ -18,7 +18,7 @@ angular.module('testApp')
       console.error('$http -> ' + url + ' error.', response);
     };
 
-    var url = 'http://localhost:9000/data/helloWorld.txt';
+    var url = 'http://localhost:8080/helloWorld';
     $http.get(url)
       .then(success, error);
 
