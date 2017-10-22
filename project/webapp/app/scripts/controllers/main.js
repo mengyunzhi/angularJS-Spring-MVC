@@ -8,7 +8,7 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('MainCtrl', function($scope, $http) {
+  .controller('MainCtrl', function($scope) {
     $scope.data = [
       {
         id: 1,
