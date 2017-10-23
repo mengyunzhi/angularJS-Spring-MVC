@@ -2,6 +2,7 @@ package com.mengyunzhi.controller;
 
 import com.mengyunzhi.repository.Constructor;
 import com.mengyunzhi.repository.ConstructorRepository;
+import com.mengyunzhi.service.ConstructorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,10 @@ import java.util.List;
 public class ConstructorController {
     @Autowired
     private ConstructorRepository constructorRepository;
+
+    @Autowired
+    private ConstructorService constructorService;
+
     @GetMapping("/")
     public List<Constructor> getAll() {
         List<Constructor> constructors = (List<Constructor>) constructorRepository.findAll();
@@ -23,7 +28,7 @@ public class ConstructorController {
 
     @GetMapping("/{id}")
     public Constructor findOneById(@PathVariable("id") Long id) {
-        Constructor constructor = constructorRepository.findOne(id);
+        Constructor constructor = constructorService.findOneById(id);
         return constructor;
     }
 }
