@@ -8,12 +8,12 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('AboutCtrl', function($scope) {
-    $scope.object = {
-      id: 1,
-      name: 'zhangsan',
-      email: 'zhangsan@mengyunzhi.com',
-      sex: 0,
-      username: 'zhangsan'
-    };
+  .controller('AboutCtrl', function($scope, $http) {
+  	var url = 'http://localhost:8080/Constructor/1';
+  	$http.get(url)
+  	.then(function success(response){
+  		$scope.object = response.data;
+  	}, function error(response){
+  		console.error(url, response);
+  	});
   });
