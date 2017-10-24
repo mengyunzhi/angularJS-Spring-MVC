@@ -14,3 +14,5 @@ _book
 *.epub
 *.mobi
 *.pdf
+project/api/.idea/
+project/api/target/
