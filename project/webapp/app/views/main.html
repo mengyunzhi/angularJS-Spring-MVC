@@ -1,46 +1,19 @@
-<<<<<<< HEAD
-<div class="jumbotron">
-  <h1>{{helloWorld}}</h1>
-  <h1>{{hi}}</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-    <input type="text" ng-model="helloWorld" >
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-=======
-<div class="row marketing">
-  <table class="table">
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>sex</th>
-      <th>email</th>
-      <th>username</th>
-    </tr>
-    <tr ng-repeat="_data in data">
-      <td>{{_data.id}}</td>
-      <td>{{_data.name}}</td>
-      <td>{{_data.sex}}</td>
-      <td>{{_data.email}}</td>
-      <td>{{_data.username}}</td>
-    </tr>
-  </table>
-  <pre>{{data | json}}</pre>
->>>>>>> origin/master
+ <div class="row marketing">
+   <table class="table">
+     <tr>
+       <th>id</th>
+       <th>name</th>
+       <th>sex</th>
+       <th>email</th>
+       <th>username</th>
+     </tr>
+     <tr ng-repeat="_data in data">
+       <td>{{_data.id}}</td>
+       <td>{{_data.name}}</td>
+       <td>{{_data.sex}}</td>
+       <td>{{_data.email}}</td>
+       <td>{{_data.username}}</td>
+     </tr>
+   </table>
+   <pre>{{data | json}}</pre>
 </div>
