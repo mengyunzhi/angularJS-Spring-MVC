@@ -34,4 +34,17 @@ npm install -g grunt-cli bower yo generator-karma generator-angular
 
 ![](image/4.png)
 
+## 注意
+
+如果出现类似如下错误，可能是由于`nodejs`以`root`权限安装所致。
+
+![](image/5.png)
+
+将上述命令加上`sudo`。
+
+```
+sudo npm install -g yo
+sudo npm install -g grunt-cli bower yo generator-karma generator-angular
+```
+
 *作者：张喜硕*
