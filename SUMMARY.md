@@ -13,4 +13,3 @@
   * [第八节:sublime](1-tools/8-sublime/readme.md)
 * [第二章: 教师管理](2-hello-world/readme.md)
   * [第一节:yeoman](2-hello-world/2.1-yeoman/readme.md)
-  * [第五节:前台启动http服务](2-hello-world/2.5-webapp-http/readme.md)
