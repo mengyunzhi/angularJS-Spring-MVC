@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="jumbotron">
   <h1>{{helloWorld}}</h1>
   <h1>{{hi}}</h1>
@@ -22,4 +23,24 @@
 
   <h4>Karma</h4>
   <p>Spectacular Test Runner for JavaScript.</p>
+=======
+<div class="row marketing">
+  <table class="table">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>sex</th>
+      <th>email</th>
+      <th>username</th>
+    </tr>
+    <tr ng-repeat="_data in data">
+      <td>{{_data.id}}</td>
+      <td>{{_data.name}}</td>
+      <td>{{_data.sex}}</td>
+      <td>{{_data.email}}</td>
+      <td>{{_data.username}}</td>
+    </tr>
+  </table>
+  <pre>{{data | json}}</pre>
+>>>>>>> origin/master
 </div>
