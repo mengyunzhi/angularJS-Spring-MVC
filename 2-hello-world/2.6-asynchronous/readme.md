@@ -1,10 +1,14 @@
 # 异步机制
-本节我们讲解一下angularJS里面的一个很重要的机制：**异步机制**（链接）
-### 我们为什么讲异步机制？
-我也不是很了解为什么有异步机制，它可能是对我们编程人员来说并没有什么好处，我们了解他最直接的原因就是避免踩坑。
+本节我们讲解一下angularJS里面的一个很重要的机制：**异步机制**
 
-### 异步这个坑
-1.现在我把们模拟数据的内容接收过来，然后对其中的某个属性值进行修改。
+### 什么是异步机制？
+异步使得我们可以在进行资源请求时，并行去处理其它的事情。还可以到程序中做个定时任务，当时间到了设定值时自动执行。
+比如，你大学的主要任务是打游戏，那么你可能需要这样的流程：
+打游戏 -> 告诉同学小王：到中午了你叫我 -> 打游戏 -> 接到小王到中午的通知 -> 订外卖 -> 打游戏 -> 外卖送到 -> 吃饭 -> 打游戏。
+你开始打游戏的那一刻，你只知道你中午要留出一定时间定外卖吃饭，然后你就专注于打游戏就可以了，直到小王告诉你到点了。你不会管游戏进度如何，你会定外卖和吃饭。在这个过程中，你不用管小王怎么帮你看点的，外卖小哥是怎么工作的。
+
+### 异步实例
+1.现在我们要把模拟数据的内容接收过来，然后对其中的某个属性值进行修改。
 我们一般的思路：
 - 首先把模拟数据中所有的数据都传过来；
 - 定义一个变量用来接收要修改的数据；
@@ -13,17 +17,21 @@
 ```javascript
 angular.module('webApp')
   .controller('MainCtrl', function($scope, $http) {
+  
     // 通过路由获取传过来的数据
     var url = 'http://localhost:9000/data/helloWorld.txt';
     $http.get(url)
+    
     // 判断是否传过来，并接收数据
     .then(function success(response){
         $scope.helloWorld = response.data;
     }, function error(response){
         console.error('$http -> ' + url + ' error.', response);
     });
+    
     // 实现改变值
     $scope.hi = $scope.helloWorld + ' Hi!';
+    
     // 查看一下结果
     console.info($scope.helloWorld);
     console.info($scope.hi);
@@ -36,22 +44,31 @@ angular.module('webApp')
 
 作为新手的我们无意间就踩坑了，但老师鼓励我说大牛就是这样炼成的。
 
-### 异步到底怎么回事？
-我们用代码来讲一下这是什么鬼：有时候代码能更好解释某个问题。
+我们用代码来解释一下这个问题，有时候代码能更好解释某个问题。
+
 ```javascript
 angular.module('webappApp')
   .controller('MainCtrl', function($scope, $http) {
+  	// 定义一个函数，用于打印输出值
   	var print = function() {
         console.info($scope.helloWorld, $scope.hi);
     };
-    var url = 'http://localhost:9000/data/helloWorld.txt';
+    
     console.log('1.未通过$http.get()获取数据之前打印结果：');
     print();
+    
+    // 通过路由获取传过来的数据
+    var url = 'http://localhost:9000/data/helloWorld.txt';
     $http.get(url)
+    
+     // 判断是否传过来，并接收数据
     .then(function success(response){
     	console.info('2.成功获取数据！但没有对数据进行操作。', response);
         print();
+        
+        // 接受传过来的值
         $scope.helloWorld = response.data;
+        
         console.info('3.进行赋值操作后的打印结果：');
      	print();
     }, function error(response){
@@ -59,8 +76,11 @@ angular.module('webappApp')
     });
     console.log('4.执行完$http.get().then()操作后：');
     print();
+    
     console.log('5.在对$scope.hi操作之前：');
     print();
+    
+    // 实现改变值
     $scope.hi = $scope.helloWorld + ' Hi!';     
     console.log('6.在对$scope.hi操作之后：');
     print();  
