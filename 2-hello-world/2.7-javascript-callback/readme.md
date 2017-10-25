@@ -6,10 +6,10 @@
 // 用get方法请求url地址
 $http.get(url)
 	// then方法传入success与error两个函数为参数
-    .then(function success(response){
+    .then(function success(response) {
     	// 请求成功，将返回值的data赋给$scope的helloWorld
         $scope.helloWorld = response.data;
-    }, function error(response){
+    }, function error(response) {
     	// 请求失败，控制台打印错误信息
         console.error('$http -> ' + url + ' error.', response);
     });
@@ -19,11 +19,11 @@ $http.get(url)
 
 这里的`then`方法传入的参数竟然是函数，这可能让大家有些苦恼，我们来研究一下。
 
+万物皆对象，虽然是个`function`，但是同时也是对象，把它当成对象就比较容易理解了。
+
+即：传一个函数，就是传一个对象。
+
 ## 回调
-
-回调函数，回头再调用的函数，`then` “回头” 再调用的`success`与`error`函数。
-
-这里指的是我们给了`then`方法传入了两个函数，我们只是写了`success`与`error`两个函数，而至于这两个函数执不执行，执行哪个，什么时候执行完全看`then`方法。
 
 ```javascript
 $http.get(url)
@@ -32,6 +32,10 @@ $http.get(url)
 ```
 
 `success`与`error`这两个被传入的、并被`then` “回头” 再调用的函数，我们称为回调函数。
+
+回调函数，回头再调用的函数，`then` “回头” 再调用的`success`与`error`函数。
+
+这里指的是我们给了`then`方法传入了两个函数，我们只是写了`success`与`error`两个函数，而至于这两个函数执不执行，执行哪个，什么时候执行完全看`then`方法。
 
 ## 简单的例子
 
@@ -48,35 +52,37 @@ $http.get(url)
 ## 示例代码
 
 ```javascript
-// 自定义thenTest函数，该函数需要两个函数为参数
+// 定义thenTest函数
 var thenTest = function(successCallback, errorCallback) {
     var successHello = 'hello success callback';
     var errorHello = 'hello error callback';
     successCallback(successHello);
     errorCallback(errorHello);
 };
-// successFunction函数
+// 定义successFunction函数
 var successFunction = function(hello) {
     console.info('sucess recive hello:', hello);
 };
-// errorFunction函数
+// 定义errorFunction函数
 var errorFunction = function(hello) {
     console.info('error revice hello: ', hello);
 };
-// 调用thenTest函数，并传入successFunction与errorFunction函数
+// 调用thenTest函数，并传入两个参数
 thenTest(successFunction, errorFunction);
 ```
 
-## 什么时候用
+假设程序员甲写了一个函数`thenTest`，我们要使用这个函数，他告诉我们第一个函数是程序正确时执行的，第二个是错误时执行的。
 
-有同学可能以为只有异步的时候才会使用回调函数，其实不然，同步的时候也可以用回调函数。
+我们只需要知道，正确时应该执行什么，错误时执行什么，然后写成函数传进去，这就是回调函数。
 
-回调本质上是一种设计模式，并且`jQuery`(包括其他框架)的设计原则遵循了这个模式。
+这里，我们会发现，传入的两个参数函数就像是在函数内部定义的一样，可以直接使用函数内的数据。
+
+如果没有回调的出现，我们想对函数内数据进行操作需要将其获取出来，而我们现在可以利用回调函数传入函数体，从而在函数内部执行，这样就可以直接获取函数内部变量。
+
+`Javascript`回调函数非常美妙且功能强大，它们为你的`web`应用和代码提供了诸多好处。你应该在有需求时使用它；或者为了代码的抽象性，可维护性以及可读性而使用回调函数来重构你的代码。
 
 ## 参考资料
 
-[JavaScript 回调函数怎么理解](https://segmentfault.com/q/1010000000140970)
-
-[浅谈 javascript 回调函数](http://wiki.jikexueyuan.com/project/brief-talk-js/callback-function.html)
+[理解与使用Javascript中的回调函数](http://www.html-js.com/article/Sexy-Javascript-understand-the-callback-function-with-the-use-of-Javascript-in)
 
 *作者：张喜硕*
