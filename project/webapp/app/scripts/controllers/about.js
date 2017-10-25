@@ -8,10 +8,14 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function($scope, $http, $routeParams) {
+  	console.log($routeParams);
+  	var id = $routeParams.id;
+  	var url = 'http://localhost:8080/Constructor/' + id;
+  	$http.get(url)
+  	.then(function success(response){
+  		$scope.object = response.data;
+  	}, function error(response){
+  		console.error(url, response);
+  	});
   });

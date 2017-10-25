@@ -13,3 +13,5 @@
   * [第八节:sublime](1-tools/8-sublime/readme.md)
 * [第二章: 教师管理](2-hello-world/readme.md)
   * [第一节:yeoman](2-hello-world/2.1-yeoman/readme.md)
+  * [第二节:yeoman环境的运行](2-hello-world/2.2-start/readme.md)
+  * [第三节:控制器](2-hello-world/2.3-webapp-controller/readme.md)
