@@ -52,9 +52,28 @@ angular.module('testApp')
 
 **注意**
 
-写完代码保存后要注意我们的终端，就是我们用来启动`grunt serve`命令的那个终端，如果代码有错误，终端中会出现对应的错误提示，类似下图。
+写完代码保存后要注意我们的终端，就是我们用来启动`grunt serve`命令的那个终端，如果代码有错误，终端中会出现对应的错误提示，比如，我们将上述代码更改为：
+
+```javascript
+ // testApp模块中定义一个名为'MainCtrl'的控制器
+angular.module('testApp')
+  .controller('MainCtrl', function () {
+
+    // 将$scope对象的helloWorld属性赋值为字符串Hello World!
+    $scope.helloWorld = 'Hello World!';
+
+    // 控制器打印$scope对象的helloWorld属性
+    console.log($scope.helloWorld);
+  });
+```
+
+我们就会得到如下错误提示：
 
 ![](image/5.png)
+
+出现两个警告(Warning)，警告的内容为：在`app/scripts/controllers/main.js`文件的第16行、第5列，`$scope`没有定义。
+
+*出现错误，我们要学会去看错误提示，这会对解决错误有极大的帮助。*
 
 ## 简单理解
 
@@ -62,7 +81,7 @@ angular.module('testApp')
 
 `console.log`，就是调用`console`对象的`log`方法，传入`$scope.helloWorld`。
 
-这里的`console`对象，就是浏览器我们提供的控制台。
+这里的`console`对象，就是浏览器给我们提供的控制台。
 
 ## 控制台
 
@@ -82,9 +101,20 @@ angular.module('testApp')
 
 为了易于理解，我们上文将`$scope`理解为一个普通对象，我们并没有定义这个对象，那么`$scope`究竟是什么，又是哪里来的呢？
 
-`$scope`是AngularJS为我们封装好的一个对象，所以我们不需要定义。
+`$scope`是`AngularJS`为我们封装好的一个对象，所以我们不需要定义。
 
-像我们的代码一样，我们只需要在`function`中传入`$scope`这个对象，我们就可以直接在函数中使用。它是连接C层与V层之间的桥梁。
+像我们的代码一样，我们只需要在`function`中传入`$scope`这个对象，我们就可以直接在函数中使用。
+
+```javascript
+angular.module('testApp')
+	// 直接传入$scope对象，即可在函数中使用
+  .controller('MainCtrl', function ($scope) {
+
+    ...
+  });
+```
+
+`$scope`是连接C层与V层之间的桥梁。
 
 就像我们之前的代码一样：
 
@@ -92,6 +122,6 @@ angular.module('testApp')
 $scope.helloWorld = 'Hello World!';
 ```
 
-我们就可以把`Hello World!`从我们的控制器传递给用于显示的视图层，同时，如果这个数据在V层被改变时，也会通过`$scope`来传回给我们的C层。
+我们就可以把`Hello World!`从我们的控制器传递给用于显示的视图层，同时，如果这个数据在V层被改变时，也会通过`$scope`来传回给我们的C层。没错，这就是`AngularJS`神奇的双向数据绑定。
 
 *作者：张喜硕*
