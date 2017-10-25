@@ -6,6 +6,7 @@
       <th>sex</th>
       <th>email</th>
       <th>username</th>
+      <td>operate</td>
     </tr>
     <tr ng-repeat="_data in data">
       <td>{{_data.id}}</td>
@@ -13,6 +14,7 @@
       <td>{{_data.sex}}</td>
       <td>{{_data.email}}</td>
       <td>{{_data.username}}</td>
+      <td><a ng-href="#!/about/{{_data.id}}">view</a></td>
     </tr>
   </table>
   <pre>{{data | json}}</pre>
