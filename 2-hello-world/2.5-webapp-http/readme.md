@@ -15,8 +15,7 @@
  ```
  angular.module('testApp')
     .controller('MainCtrl', function($scope, $http) {
-        //  http请求的地址
-        var url = 'http://localhost:9000/data/helloWorld.txt';
+        var url = 'http://localhost:9000/data/helloWorld.txt'; //  http请求的地址
         $http.get(url).then();
     });
  ```
@@ -26,15 +25,14 @@
  ```
  angular.module('testApp')
     .controller('MainCtrl', function($scope, $http) {
-        //  http请求的地址
-        var url = 'http://localhost:9000/data/helloWorld.txt';
+        var url = 'http://localhost:9000/data/helloWorld.txt'; //  http请求的地址
         // 请求成功执行代码
         var success = function() {
-            console.info('print success response', response);
+            console.info('print success response');
         };
         // 请求失败执行代码
         var error = function() {
-            console.error('$http -> ' + url + ' error.', response);
+            console.error('$http -> ' + url + ' error.');
         };
         $http.get(url).then();
     });
@@ -45,8 +43,7 @@
  ``` javascript
 angular.module('testApp')
     .controller('MainCtrl', function($scope, $http) {
-        //  http请求的地址
-        var url = 'http://localhost:9000/data/helloWorld.txt';
+        var url = 'http://localhost:9000/data/helloWorld.txt';  //  http请求的地址
         // 请求成功执行代码
         var success = function() {
             console.info('print success response', response);
@@ -55,18 +52,17 @@ angular.module('testApp')
         var error = function() {
             console.error('$http -> ' + url + ' error.', response);
         };
-        // get获得请求地址，then发起请求，请求成功执行第一个函数，失败执行第二个
-        $http.get(url).then(success, error);
+        $http.get(url).then(success, error);  // get获得请求地址，then发起请求，请求成功执行第一个函数，失败执行第二个
     });
   ```
   
- 也可以直接将success和error函数放入then中
+ 也可以直接将success和error函数放入then中。是的，你没有看错，我们直接将success 和 error两个函数做为参数传给了$http.get(url).then()。就也是javascript与我们学过的传统语言最大的不同。在我们以前 的习惯中，我们只会将变量、对象做为参数传给另一个方法。但javascript中，函数也可以像参数一样传过去。
+而且慢慢的我们发现，相对于提前定义，我们更愿意这样使用：
   
   ```  javascript
    angular.module('testApp')
     .controller('MainCtrl', function($scope, $http) {
-        // http请求的网址
-        var url = 'http://localhost:9000/data/helloWorld.txt';
+        var url = 'http://localhost:9000/data/helloWorld.txt';  // http请求的地址
         // get获得请求地址，then发起请求，请求成功执行第一个函数，失败执行第二个
         $http.get(url)
             .then(function success(response) { // 请求成功
