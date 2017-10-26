@@ -14,7 +14,7 @@
 public String say() {
 	echo `helloWorld`;
 }
-
+```
 3. 主文件，我们将 src/main/java/hello/Application.java 修改为： src/main/java/com/mengyunzhi/Application.java
 
 4. 按官教程启动项目
@@ -23,3 +23,8 @@ If you are using Maven, you can run the application using `./mvnw spring-boot:ru
 ```
 java -jar target/gs-rest-service-0.1.0.jar
 ```
+
+# 第八节 后台服务初始化
+
+本节，我们将创建后台服务，开始后台代码的编写。
+
