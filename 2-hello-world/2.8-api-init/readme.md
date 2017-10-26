@@ -255,7 +255,7 @@ public class HelloWorld {
 
 ![restart](image/2017-10-26.10.png)
 
-查看控制台，看有没有报错。
+查看控制台，看看有没有报错。
 
 **helloWorldApi**
 
