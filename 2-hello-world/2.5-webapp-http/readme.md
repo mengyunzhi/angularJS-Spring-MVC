@@ -8,7 +8,8 @@
 
 ![](image/2017-10-24-09-49-58.png) 
 
-现在我们有了数据了就要开始数据请求，我们通过$http来请求数据,$http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据,以$开头的服务，都是angulajs的自带服务。
+现在我们有了数据了就要开始数据请求，我们通过$http来请求数据,$http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据。
+以$开头的服务，都是angulajs的自带服务。
 
  1. 在书写代码时，先书写`$http.get().then();`方法，git获取请求地址，then发起请求，读取远程服务器的数据
  
@@ -45,19 +46,18 @@ angular.module('testApp')
     .controller('MainCtrl', function($scope, $http) {
         var url = 'http://localhost:9000/data/helloWorld.txt';  //  http请求的地址
         // 请求成功执行代码
-        var success = function() {
+        var success = function(response) {
             console.info('print success response', response);
         };
         // 请求失败执行代码
-        var error = function() {
+        var error = function(response) {
             console.error('$http -> ' + url + ' error.', response);
         };
         $http.get(url).then(success, error);  // get获得请求地址，then发起请求，请求成功执行第一个函数，失败执行第二个
     });
   ```
   
- 也可以直接将success和error函数放入then中。是的，你没有看错，我们直接将success 和 error两个函数做为参数传给了$http.get(url).then()。就也是javascript与我们学过的传统语言最大的不同。在我们以前 的习惯中，我们只会将变量、对象做为参数传给另一个方法。但javascript中，函数也可以像参数一样传过去。
-而且慢慢的我们发现，相对于提前定义，我们更愿意这样使用：
+ 也可以直接将success和error函数放入then中。
   
   ```  javascript
    angular.module('testApp')
@@ -72,6 +72,11 @@ angular.module('testApp')
             });
     });
 ```
+  
+  是的，你没有看错，我们直接将success 和 error两个函数做为参数传给了$http.get(url).then()。就也是javascript与我们学过的传统语言最大的不同。在我们以前 的习惯中，我们只会将变量、对象做为参数传给另一个方法。但javascript中，函数也可以像参数一样传过去。
+而且慢慢的我们发现，相对于提前定义，我们更愿意这样使用：
+
+![](image/20171026.gif) 
   
   请求成功结果入图所示
   
