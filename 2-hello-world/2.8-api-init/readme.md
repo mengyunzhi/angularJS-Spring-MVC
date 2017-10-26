@@ -218,6 +218,43 @@ public class Application {
 
 **新建文件**
 
+在 `com.mengyunzhi` 下新建 `controller` 包，然后在 `controller` 包下新建 `HelloWorld` 类。
 
+![Hello](image/2017-10-26.8.png)
 
-我们
+**Helloworld.java**
+
+```java
+package com.mengyunzhi.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * HelloWorld控制器
+ * 2017-10-26
+ * design by Poshichao
+ */
+
+// @RestController注解，声明这是一个spring-boot创建的Rest控制器（支持前后台分离）
+@RestController
+public class HelloWorld {
+    // @RequestMapping注解，用来设置路由
+    @RequestMapping("/helloWorld")
+    public String say() {
+        return "hello world api";
+    }
+}
+```
+
+复制上面的代码。
+
+**启动**
+
+重启项目。这次我们可以点右上角的绿色三角。
+
+![restart](image/2017-10-26.10.png)
+
+查看控制台，看有没有报错。
+
+****
