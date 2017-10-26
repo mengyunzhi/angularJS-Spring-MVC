@@ -22,7 +22,7 @@ npm install -g yo
 
 ## 生成器
 
-`yeoman`只是一个基础工具，我们使用`AngularJS`来开发前台，所以需要安装一系列针对`AngularJS`的开发工具。大牛们已经帮我们整理好了，[链接](https://github.com/yeoman/generator-angular)
+`yeoman`只是一个基础工具，我们使用`AngularJS`来开发前台，所以需要安装一系列针对`AngularJS`的开发工具。
 
 ```
 npm install -g grunt-cli bower yo generator-karma generator-angular
@@ -46,5 +46,9 @@ npm install -g grunt-cli bower yo generator-karma generator-angular
 sudo npm install -g yo
 sudo npm install -g grunt-cli bower yo generator-karma generator-angular
 ```
+
+## 参考资料
+
+[Yeoman generator for AngularJS](https://github.com/yeoman/generator-angular)
 
 *作者：张喜硕*

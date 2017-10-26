@@ -24,26 +24,26 @@
 
 ```javascript
 angular.module('webApp')
-  .controller('MainCtrl', function($scope, $http) {
-  
-    // 通过路由获取传过来的数据
-    var url = 'http://localhost:9000/data/helloWorld.txt';
-    $http.get(url)
-    
-    // 判断是否传过来，并接收数据
-    .then(function success(response){
-        $scope.helloWorld = response.data;
-    }, function error(response){
-        console.error('$http -> ' + url + ' error.', response);
+    .controller('MainCtrl', function($scope, $http) {
+
+        // 通过路由获取传过来的数据
+        var url = 'http://localhost:9000/data/helloWorld.txt';
+        $http.get(url)
+
+            // 判断是否传过来，并接收数据
+            .then(function success(response) {
+                $scope.helloWorld = response.data;
+            }, function error(response) {
+                console.error('$http -> ' + url + ' error.', response);
+            });
+
+        // 实现改变值
+        $scope.hi = $scope.helloWorld + ' Hi!';
+
+        // 查看一下结果
+        console.info($scope.helloWorld);
+        console.info($scope.hi);
     });
-    
-    // 实现改变值
-    $scope.hi = $scope.helloWorld + ' Hi!';
-    
-    // 查看一下结果
-    console.info($scope.helloWorld);
-    console.info($scope.hi);
-  });
 ```
 
 打开控制台查看一下结果：显示$scope.helloWorld这个属性没有被定义**udefined**
@@ -103,6 +103,7 @@ angular.module('webappApp')
         console.log('6.在对$scope.hi操作之后：');
         print();
     });
+
  
 ```
 
@@ -110,10 +111,12 @@ angular.module('webappApp')
 
 ![](image/2.png)
 
-1->4->5->6->2->3这个顺序，就急着执行下面的了，这就是异步机制。
+1->4->5->6->2->3这个顺序，其实就是获取数据的操作还没完,就急着执行下面的了，这就是异步机制。
 
 
 
 3.如果能按照我们设定的 1->2->3->4->5->6依次执行呢？ ---- 回调函数。
+
+
 
 
