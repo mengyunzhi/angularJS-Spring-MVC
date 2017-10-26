@@ -5,7 +5,7 @@
 
 ## 显示hello world！
 
-`main.js` 先不用改动，我们来修改一下 `main.html` 中的代码。
+我们先来修改一下 `main.html` 中的代码。
 
 将`<h1></h1>` 标签中的内容换掉。
 
@@ -21,7 +21,7 @@
 
 ## 数据绑定
 
-在 `angularjs` 中，我们通常会在 `view` 层使用双花括号： `{{}}` 来绑定 `controller` 中的变量。也就是说`{{}}`中的 `helloWorld` ，会自动的赋值为 `main.js` 中 `$scope.helloworld` 的值。
+在 `angularjs` 中，我们通常会在 `view` 层使用双花括号： `{{}}` 来绑定 `$scope` 上的变量。也就是说`{{}}`中的 `helloWorld` ，会自动的赋值为 `main.js` 中 `$scope.helloworld` 的值。
 
 **main.js**
 
@@ -46,7 +46,7 @@ angular.module('testApp')
 
 可以看到，又多了一行 `Hello World！ Hi` 。
 
-**注意：** 时刻记得看控制台，如果有出现 `error` ，对照一下代码，看看是哪块写错了。
+**注意：** 时刻记得看控制台及shell，如果有出现 `error` ，对照一下代码，看看是哪块写错了。
 
 ## 双向数据绑定
 
@@ -54,7 +54,7 @@ angular.module('testApp')
  
  ![towway-data-bind](image/2017-10-25.3.png)
  
- 所谓双向数据绑定，简单来说就是视图层做了一个修改，它会自动同步在数据模型中，同样的，数据模型有了变化，也会自动同步到视图层去。上代码。
+ 所谓双向数据绑定，简单来说就是 `main.html` 做了一个修改，它会自动同步在 `main.js` 中，同样的，`main.js` 有了变化，也会自动同步到 `main.html` 中去。上代码。
  
  **main.html**
  
@@ -72,8 +72,13 @@ angular.module('testApp')
 </div>
 ```
 
-我们在视图层又添加了一个 `input` 输入框，用 `ng-model` 来绑定变量 `helloWorld`。而在 `controller层中` ， 则是通过 `scope` 来实现双向数据绑定。
+我们在视图层又添加了一个 `input` 输入框，用 `ng-model` 来绑定变量 `helloWorld`。
 
+`<input type="text" ng-model="helloWorld" >` 使我们可以在 `main.html(V层)` 中改变这个变量的值，当它发生变化时，会实时传给 `main.js(C层)` 中的 `$scope` 的 `helloWorld`。这时， `main.js` 发现 `$scope` 的 `helloWorld` 改变了，就会立即通知 `main.html(V层)`
+ 的 `{{helloWorld}}`。所以，数据传递变化的顺序是：V层(`<input type="text" ng-model="helloWorld" >` )->C层(`$scope` 的 `helloWorld`)->V层(`{{helloWorld}}`)。即 `V->C->V` 的顺序。
+ 
+ 我们把这种V层实时传递数据给C层，C层同时又实时地将数据传递给V层的现象叫做 `双向数据绑定`。
+ 
 ![gif](image/towway-databind.gif)
 
 可以看到，我们在输入框中改变了 `Hello World！` ，相应的，上面的 `Hello World！` 也随之改变。
