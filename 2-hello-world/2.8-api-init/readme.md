@@ -91,6 +91,7 @@ maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
+    <!--项目信息-->
     <groupId>com.mengyunzhi</groupId>
     <artifactId>angularjs-spring-mvc</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -156,3 +157,15 @@ maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
 **groupId：** 组织名。 
 
 **artifactId：** 项目名。
+
+这两条信息就像一个坐标，它能帮助别人找到我们的项目，加以依赖。
+
+**<version>：** 版本信息。
+
+**<parent>：** 继承。我们建立的项目是继承了spring的框架。
+
+**<dependencies>：** 注入依赖。这里面添加我们的项目依赖。以后我们还会添加很多依赖，都会以这种形式添加到项目中。
+
+我们现在添加了两个依赖，第一个是spring框架下的web项目依赖，第二个是spring的单元测试的依赖，这个我们后面会接触到。
+
+其余的我们现在不用知道，相信随着学习的深入，你会对它们的作用有更好的了解。
