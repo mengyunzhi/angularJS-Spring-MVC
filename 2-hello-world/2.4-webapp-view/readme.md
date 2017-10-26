@@ -76,6 +76,8 @@ angular.module('testApp')
 
 `<input type="text" ng-model="helloWorld" >` 使我们可以在 `main.html(V层)` 中改变这个变量的值，当它发生变化时，会实时传给 `main.js(C层)` 中的 `$scope` 的 `helloWorld`。这时， `main.js` 发现 `$scope` 的 `helloWorld` 改变了，就会立即通知 `main.html(V层)`
  的 `{{helloWorld}}`。所以，数据传递变化的顺序是：V层(`<input type="text" ng-model="helloWorld" >` )->C层(`$scope` 的 `helloWorld`)->V层(`{{helloWorld}}`)。即 `V->C->V` 的顺序。
+
+![vcv](image/2017-10-26.4.png)
  
  我们把这种V层实时传递数据给C层，C层同时又实时地将数据传递给V层的现象叫做 `双向数据绑定`。
  
