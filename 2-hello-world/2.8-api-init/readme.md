@@ -84,7 +84,7 @@ java -jar target/gs-rest-service-0.1.0.jar
 
 ![tree](image/2017-10-26.7.png)
 
-OK！到这里，我们的maven项目已经建好了。
+对照一下你的项目结构。一开始最好保持与我们的目录结构一致，随着你对项目的熟悉，就可以按照自己的想法创建你的目录结构了。OK！到这里，我们的maven项目已经建好了。
 
 ## 配置pom.xml
 
@@ -178,3 +178,54 @@ maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
 
 ## helloworld
 
+**新建文件**
+
+右键 `java` ，新建一个controller包，然后在controller中新建一个 `HelloWorld` 的类。
+
+![fileHelloworld](image/2017-10-26.8.png)
+
+**编写HelloWorld**
+
+```
+package controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * HelloWorld控制器
+ * 2017-10-26
+ * design by 朴世超
+ */
+
+// @RestController注解，声明这个类是一个Rest控制器（支持前后台分离）
+@RestController
+public class HelloWorld {
+    // @RequestMapping注解，用来设置请求的路由
+    @RequestMapping("/helloworld")
+    public SayHello say() {
+        // 实例化一个SayHello对象
+        SayHello sayHello = new SayHello();
+        
+        // 为sayHello赋值
+        sayHello.setValue("hello world api");
+        
+        // 返回对象sayHello
+        return sayHello;
+    }
+    
+    // 建立一个静态类，包括一个对象成员value
+    static public class SayHello {
+        private String value;
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+}
+
+```
