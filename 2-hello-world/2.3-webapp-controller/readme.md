@@ -36,7 +36,7 @@
 我们将`main.js`中的代码替换为如下代码。
 
 ```javascript
- // testApp模块中定义一个名为'MainCtrl'的控制器
+// testApp模块中定义一个名为'MainCtrl'的控制器
 angular.module('testApp')
   .controller('MainCtrl', function ($scope) {
 
@@ -53,7 +53,7 @@ angular.module('testApp')
 写完代码保存后要注意我们的终端，就是我们用来启动`grunt serve`命令的那个终端，如果代码有错误，终端中会出现对应的错误提示，比如，我们将上述代码更改为：
 
 ```javascript
- // testApp模块中定义一个名为'MainCtrl'的控制器
+// testApp模块中定义一个名为'MainCtrl'的控制器
 angular.module('testApp')
   .controller('MainCtrl', function () {
 
@@ -105,7 +105,7 @@ angular.module('testApp')
 
 ```javascript
 angular.module('testApp')
-	// 控制器中注入$scope对象
+  // function($scope)，控制器中注入$scope对象
   .controller('MainCtrl', function ($scope) {
 
     ...
