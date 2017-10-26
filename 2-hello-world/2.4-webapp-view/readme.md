@@ -40,7 +40,7 @@ angular.module('testApp')
 <h1>{{hi}}</h1>
 ```
 
-我们又定义了一个变量 `hi` ,将 `$scope.helloWorld` 的值后面添加上了 ` Hi` ，然后赋值给 `$scope.hi`。同时在V层进行一下数据绑定。再看看我们的界面有什么变化。
+我们又定义了一个变量 `$scope.hi` ,将 `$scope.helloWorld` 的值后面添加上了 ` Hi` ，然后赋值给 `$scope.hi`。同时在V层进行一下数据绑定。再看看我们的界面有什么变化。
 
 ![hi](image/2017-10-24.2.png)
 
