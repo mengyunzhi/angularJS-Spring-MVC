@@ -78,3 +78,79 @@ java -jar target/gs-rest-service-0.1.0.jar
 </project>
 ```
 
+显示上面的信息，我们的maven项目初始化就完成了。
+
+## 配置pom.xml
+
+maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.mengyunzhi</groupId>
+    <artifactId>angularjs-spring-mvc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    
+    <!-- 继承org.springframework.boot组织下的spring-boot-starter-parent项目 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.8.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <!--spring-boot框架下的web项目依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <!--spring-boot 单元测试依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+
+    <properties>
+        <!--jdk版本-->
+        <java.version>1.8</java.version>
+    </properties>
+
+
+    <build>
+        <!--插件-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
+```
+
+刚开始我们并不需要知道上面的代码具体都是干什么的，简单了解，然后直接复制到你的文件中就可以了。
+
+下面我来简单介绍一下上面的几个标签。
+
+**groupId：**
