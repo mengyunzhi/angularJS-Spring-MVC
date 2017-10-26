@@ -28,3 +28,38 @@ java -jar target/gs-rest-service-0.1.0.jar
 
 本节，我们将创建后台服务，开始后台代码的编写。
 
+## 创建maven项目
+
+前面我们已经知道了 `maven` 这个神奇的小东西，接下来我们就来创建一个依赖于maven的项目。
+
+**新建api文件夹**
+
+在项目的根目录下新建一个文件夹，命名为 `api`。
+
+![api](image/2017-10-26.1.png)
+
+**打开IDEA**
+
+![idea](image/2017-10-26.2.png)
+
+**创建maven项目**
+
+选择 `Create new project` ，然后在左侧选择 `Maven`。
+
+![maven](image/2017-10-26.3.png)
+
+什么也不要点，直接点击 `Next` 下一步。
+
+![name](image/2017-10-26.4.png)
+
+在 `GroupId` 里输入 `com.mengyunzhi` ，在 `ArtifactId` 里输入 `angularjs-spring-mvc` 。这里直接按照我们的教程命名，后面我会简单介绍这两个名称。
+
+下一步。
+
+![location](image/2017-10-26.5.png)
+
+修改一下我们的项目路径 `project location` ，将项目放到我们刚刚新建的 `api` 文件夹下。 `Finish` 完成。
+
+![import](image/2017-10-26.6.png)
+
+我们会发现
