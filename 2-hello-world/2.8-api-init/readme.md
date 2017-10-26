@@ -64,3 +64,16 @@ java -jar target/gs-rest-service-0.1.0.jar
 
 我们会发现在右下脚出现一个小提示框，它说maven项目需要导入，我们选择第二个 `Enable Auto-Import` 。这样，下次就不需要我们手动导入maven依赖了，IDEA会为我们自动完成。
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mengyunzhi</groupId>
+    <artifactId>angularjs-spring-mvc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+</project>
+```
