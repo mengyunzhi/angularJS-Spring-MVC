@@ -162,7 +162,7 @@ maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
 
 **groupId：** 组织名。 
 
-**artifactId：** 项目名。
+**artifactId：** 项目名。每个组织中，项目名都是唯一的。
 
 这两条信息就像一个坐标，它能帮助别人找到我们的项目，加以依赖。
 
@@ -264,3 +264,5 @@ public class HelloWorld {
 ![test](image/2017-10-26.11.png)
 
 把 `Host/port` 改成 `http://localhost:8080`，在 `Path` 中写上 `helloWorld`。然后就看到控制台中出现了我们期待的 `hello world api`。
+
+到此为止，我们的项目已经创建完毕。
