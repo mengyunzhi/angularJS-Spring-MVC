@@ -186,7 +186,7 @@ maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
 
 **编写HelloWorld**
 
-```
+```java
 package controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
