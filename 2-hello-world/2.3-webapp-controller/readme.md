@@ -101,11 +101,11 @@ angular.module('testApp')
 
 `$scope`是`AngularJS`为我们封装好的一个对象，所以我们不需要定义。
 
-像我们的代码一样，我们只需要在`function`中传入`$scope`这个对象，我们就可以直接在函数中使用。
+类似`php`中的`use`，`java`中的`import`，我们只需要在`function`中传入`$scope`这个对象，我们就可以直接在函数中使用。
 
 ```javascript
 angular.module('testApp')
-	// 直接传入$scope对象，即可在函数中使用
+	// 控制器中注入$scope对象
   .controller('MainCtrl', function ($scope) {
 
     ...
