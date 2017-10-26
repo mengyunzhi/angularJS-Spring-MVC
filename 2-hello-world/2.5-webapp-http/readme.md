@@ -113,9 +113,9 @@ angular.module('testApp')
  
  v层代码(mian.html)
  
- ```html
+ ```angularjs
  <div class="jumbotron">
-    <h1>{{helloWorld}}</h1><!-- c层数据引入 -->
+    <h1> {{helloWorld}} </h1><!-- c层数据引入 -->
     <p class="lead">
         <img src="images/yeoman.png" alt="I'm Yeoman">
         <br> Always a pleasure scaffolding your apps.

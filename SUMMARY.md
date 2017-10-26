@@ -15,3 +15,4 @@
   * [第一节:yeoman](2-hello-world/2.1-yeoman/readme.md)
   * [第二节:yeoman环境的运行](2-hello-world/2.2-start/readme.md)
   * [第三节:控制器](2-hello-world/2.3-webapp-controller/readme.md)
+  * [第三节:控制器](2-hello-world/2.5-webapp-http/readme.md)
