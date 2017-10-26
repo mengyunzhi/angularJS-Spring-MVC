@@ -268,4 +268,4 @@ public class HelloWorld {
 到此为止，我们的项目已经创建完毕。
 
 ---------------------------------------
-官方参考文档：
+官方参考文档：[http://spring.io/guides/gs/rest-service/](http://spring.io/guides/gs/rest-service/)
