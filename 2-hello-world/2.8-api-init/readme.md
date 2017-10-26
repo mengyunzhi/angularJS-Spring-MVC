@@ -62,4 +62,5 @@ java -jar target/gs-rest-service-0.1.0.jar
 
 ![import](image/2017-10-26.6.png)
 
-我们会发现在右下脚出现一个小提示框，它说maven项目需要导入，我们选择第二个 `Enable `
+我们会发现在右下脚出现一个小提示框，它说maven项目需要导入，我们选择第二个 `Enable Auto-Import` 。这样，下次就不需要我们手动导入maven依赖了，IDEA会为我们自动完成。
+
