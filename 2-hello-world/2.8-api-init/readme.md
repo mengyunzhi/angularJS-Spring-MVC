@@ -235,13 +235,15 @@ public class HelloWorld {
 
 查看控制台，看看有没有报错。
 
+![](image/2017-10-28.13.png)
+
 ## 测试
 
 在IDEA上方菜单，找到 `Tools` ，选择 `Test RESTful Web Service`，打开。
 
 ![test](image/2017-10-26.11.png)
 
-把 `Host/port` 改成 `http://localhost:8080`，在 `Path` 中写上 `helloWorld`。然后就看到控制台中出现了我们期待的 `hello world api`。
+把 `Host/port` 改成 `http://localhost:8080`，在 `Path` 中写上 `helloWorld`， 点击左侧的绿色三角。然后就看到控制台中出现了我们期待的 `hello world api`。
 
 到此为止，我们的项目已经创建完毕。
 
