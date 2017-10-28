@@ -235,6 +235,8 @@ public class HelloWorld {
 
 查看控制台，看看有没有报错。
 
+![](image/2017-10-28.13.png)
+
 ## 测试
 
 在IDEA上方菜单，找到 `Tools` ，选择 `Test RESTful Web Service`，打开。
