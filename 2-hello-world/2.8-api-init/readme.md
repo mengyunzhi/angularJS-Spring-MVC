@@ -1,29 +1,3 @@
-参考：http://spring.io/guides/gs/rest-service/
-初始化springmvc下的rest服务。
-注意：严格按官方教程顺序来。但我们的目的是输出HelloWorld，所以需要对官方教程的一些信息进行一些改动.
-
-1. 修改pom.xml中的以下两个字段的值：
-
-    <groupId>org.springframework</groupId> -> <groupId>com.mengyunzhi</groupId>
-    <artifactId>gs-rest-service</artifactId> -> <artifactId>angularjs-springmvc</artifactId>
-
-2. 控制器文件，我们去除 src/main/java/hello/GreetingController.java 文件。新建 src/main/java/com/mengyunzhi/HelloWorld.java
-并加入 say()方法
-```
-@RequestMapping("/HelloWorld")
-public String say() {
-	echo `helloWorld`;
-}
-```
-3. 主文件，我们将 src/main/java/hello/Application.java 修改为： src/main/java/com/mengyunzhi/Application.java
-
-4. 按官教程启动项目
-If you are using Maven, you can run the application using `./mvnw spring-boot:run`. Or you can build the JAR file with `./mvnw clean package`. Then you can run the JAR file:
-
-```
-java -jar target/gs-rest-service-0.1.0.jar
-```
-
 # 第八节 后台服务初始化
 
 本节，我们将创建后台服务，开始后台代码的编写。
@@ -58,11 +32,7 @@ java -jar target/gs-rest-service-0.1.0.jar
 
 ![location](image/2017-10-26.5.png)
 
-修改一下我们的项目路径 `project location` ，将项目放到我们刚刚新建的 `api` 文件夹下。 `Finish` 完成。
-
-![import](image/2017-10-26.6.png)
-
-我们会发现在右下脚出现一个小提示框，它说maven项目需要导入，我们选择第二个 `Enable Auto-Import` 。这样，下次就不需要我们手动导入maven依赖了，IDEA会为我们自动完成。
+修改一下我们的项目路径 `project location` ，将项目放到我们刚刚新建的 `api` 文件夹下。比如我的放置到了 `/home/poshichao/project/spring-test/angularJS-Spring-MVC/project/api`， 最后`Finish` 完成。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,17 +48,23 @@ java -jar target/gs-rest-service-0.1.0.jar
 </project>
 ```
 
-可以看到显示上面的信息。
+点击`Finish` 后，我们可以看到IDEA为我们自动创建了如上的xml代码。
+
+![import](image/2017-10-26.6.png)
+
+我们会发现在右下脚出现一个小提示框，它说maven项目需要导入，我们选择第二个 `Enable Auto-Import` 。这样，下次就不需要我们手动导入maven依赖了，IDEA会为我们自动完成。
 
 点开左侧的 `api`。
 
-![tree](image/2017-10-26.7.png)
+![tree](image/2017-10-27.7.png)
 
 对照一下你的项目结构。一开始最好保持与我们的目录结构一致，随着你对项目的熟悉，就可以按照自己的想法创建你的目录结构了。OK！到这里，我们的maven项目已经建好了。
 
 ## 配置pom.xml
 
-maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
+maven项目创建好后，我们就要开始配置一下IDEA为我们创建的 `pom.xml` 文件了。
+
+配置内容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -182,7 +158,7 @@ maven项目创建好后，我们就要开始配置一下 `pom.xml` 文件了。
 
 右键 `java` ，新建一个 `com.mengyunzhi` 包，然后在 `com.mengyunzhi` 中新建一个 `Application` 的类。
 
-![app](image/2017-10-26.8.png)
+![app](image/2017-10-27.8.png)
 
 **编写启动项**
 
@@ -207,6 +183,8 @@ public class Application {
 > 在springMVC项目中我们将大量使用以 "@" 注解来进行声明。
 
 **启动项目**
+
+![](image/2017-10-27.12.png)
 
 点击左侧绿色的小三角，来启动我们的项目。
 
@@ -257,7 +235,7 @@ public class HelloWorld {
 
 查看控制台，看看有没有报错。
 
-**helloWorldApi**
+## 测试
 
 在IDEA上方菜单，找到 `Tools` ，选择 `Test RESTful Web Service`，打开。
 
@@ -269,3 +247,5 @@ public class HelloWorld {
 
 ---------------------------------------
 官方参考文档：[http://spring.io/guides/gs/rest-service/](http://spring.io/guides/gs/rest-service/)
+
+**作者：[朴世超](www.mengyunzhi.cn)** 
