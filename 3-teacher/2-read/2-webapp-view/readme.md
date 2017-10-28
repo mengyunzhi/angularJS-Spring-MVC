@@ -4,7 +4,9 @@
 
 ## main.html
 
-删除其中所有代码，然后将下面的代码写进去。
+![main.html](image/2017-10-28.2.png)
+
+打开 `main.html`, 删除其中所有代码，然后将下面的代码写进去。
 
 ```html
 <div class="row marketing">
