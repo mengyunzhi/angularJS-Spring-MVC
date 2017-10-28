@@ -1,88 +1,84 @@
 # 第七节 回调函数
 
-## 函数作为参数
+回调函数是一个很重要的概念，Google回调时找到了很多篇博客，但觉得讲解地不够深刻、不够清楚。就自己去思考，希望本文能对你在回调函数的认识上有所帮助。
 
-```javascript
-// 用get方法请求url地址
-$http.get(url)
-	// then方法传入success与error两个函数为参数
-    .then(function success(response) {
-    	// 请求成功，将返回值的data赋给$scope的helloWorld
-        $scope.helloWorld = response.data;
-    }, function error(response) {
-    	// 请求失败，控制台打印错误信息
-        console.error('$http -> ' + url + ' error.', response);
-    });
-```
+## 例子
 
-之前，我们用`$http`请求资源时写了一段这样的代码。
+小王：学习->中午：学习->学习
 
-这里的`then`方法传入的参数竟然是函数，这可能让大家有些苦恼，我们来研究一下。
+我们：打游戏->告诉小王：中午叫我->打游戏
 
-万物皆对象，虽然是个`function`，但是同时也是对象，把它当成对象就比较容易理解了。
+我们告诉小王：中午叫我。当时间到达中午时叫我。
 
-即：传一个函数，就是传一个对象。
+当事件到达中午这个事件被触发时，小王就会调用“叫我”这个方法作为这个事件的响应。
+
+也就是说，虽然“叫我”这个方法是我们定义的，但是却归小王调用。
+
+这样就简化了我们的很多操作，我们不需要知道怎么去判断时间是否到达中午，这些操作小王都帮我们完成了，我们直接抛给小王一个“叫我”函数，他就会在条件满足时回来调用我们定义的函数。
+
+我们传给小王的“叫我”函数，就是回调函数。
 
 ## 回调
 
-```javascript
-$http.get(url)
-	// 传入success与error函数
-    .then(function success() {}, function error() {});
-```
+这里我们使用`AngularJS`框架，我们调用框架中的函数，这个过程叫做`Call`，调用。
 
-`success`与`error`这两个被传入的、并被`then` “回头” 再调用的函数，我们称为回调函数。
+而如果我们写了一个函数，把这个函数传给框架中的某个方法，交给框架去调用，这个过程就叫做`CallBack`，回调。
 
-回调函数，回头再调用的函数，`then` “回头” 再调用的`success`与`error`函数。
+这里所说的框架只是举个比较容易的例子，某一个方法，去调用我们所写的当前方法，就是回调。
 
-这里指的是我们给了`then`方法传入了两个函数，我们只是写了`success`与`error`两个函数，而至于这两个函数执不执行，执行哪个，什么时候执行完全看`then`方法。
-
-## 简单的例子
-
-小明去商店买电脑，刚好没有货。
-
-小明告诉售货员：“电脑到了，打电话给我”。
-
-过一段时间，电脑到货时，售货员给小明打电话。
-
-小明与售货员两个对象， “打电话给小明” 作为一个函数传给了售货员，当电脑到货时，售货员才去执行这个函数。
-
-*函数作为参数传入，但是在特定条件下执行，这就是回调。*
-
-## 示例代码
+## 代码
 
 ```javascript
 // 定义thenTest函数
 var thenTest = function(successCallback, errorCallback) {
-    var successHello = 'hello success callback';
-    var errorHello = 'hello error callback';
-    successCallback(successHello);
-    errorCallback(errorHello);
+    ...
 };
 // 定义successFunction函数
-var successFunction = function(hello) {
-    console.info('sucess recive hello:', hello);
+var successFunction = function() {
+    console.info('sucess');
 };
 // 定义errorFunction函数
-var errorFunction = function(hello) {
-    console.info('error revice hello: ', hello);
+var errorFunction = function() {
+    console.info('error');
 };
 // 调用thenTest函数，并传入两个参数
 thenTest(successFunction, errorFunction);
 ```
 
-假设程序员甲写了一个函数`thenTest`，我们要使用这个函数，他告诉我们第一个函数是程序正确时执行的，第二个是错误时执行的。
+某天，程序员甲写了`thenTest`函数，他告诉我们，这个函数需要两个函数作为参数，成功就执行第一个，失败就执行第二个。
 
-我们只需要知道，正确时应该执行什么，错误时执行什么，然后写成函数传进去，这就是回调函数。
+我们直接使用`thenTest`函数，并传入两个参数，这里，我们不需要知道甲在`thenTest`内部究竟是怎么判断是执行成功还是执行失败的，我们只需要知道对应着不同的状态需要执行什么操作就可以了。
 
-这里，我们会发现，传入的两个参数函数就像是在函数内部定义的一样，可以直接使用函数内的数据。
+我们似乎了解了回调的本质：响应状态的操作。
 
-如果没有回调的出现，我们想对函数内数据进行操作需要将其获取出来，而我们现在可以利用回调函数传入函数体，从而在函数内部执行，这样就可以直接获取函数内部变量。
+## 优点
 
-`Javascript`回调函数非常美妙且功能强大，它们为你的`web`应用和代码提供了诸多好处。你应该在有需求时使用它；或者为了代码的抽象性，可维护性以及可读性而使用回调函数来重构你的代码。
+```javascript
+var url = 'http://localhost:9000/data/helloWorld.txt';
+$http.get(url).then(success(response) {}, error(response) {});
+```
+
+就拿我们之前写过的代码为例，我们的`then`方法用到了回调函数，我们对比一下，就能了解回调函数的优点。
+
+```javascript
+var url = 'http://localhost:9000/data/helloWorld.txt';
+console.log($http.get(url));
+```
+
+我们不用包含回调的`then`方法，我们就打印出来看看`$http.get(url)`的返回值到底是什么！
+
+![](image/0.png)
+
+我们看到打印结果，返回值是一个拥有很多属性`Promise`对象，但是这个对象怎么用呢？这个对象的一堆什么`$$state`、`value`、`config`等属性，怕是只有`Google`内部维护这个框架的工程师才能看懂都是什么属性吧。
+
+那我们想去判断返回值，然后成功就执行数据传输操作，失败就在控制台打印错误提示改怎么办呢？如果我们不用回调函数，那我们就需要去看`AngularJS`的框架中对`Promise`对象的各种属性是怎么定义的了，这就无意中提高了我们的学习成本，降低了我们的效率，这与我们要使用框架提高开发效率的初衷不符。
+
+所以框架采用了回调的设计模式，我们将我们想要在不同状态下执行的操作传过去，而框架底层已经为我们写好了那些判断`Promise`对象各种状态的代码，我们只需写好函数，等着框架解析完对象，然后去调用我们提供给框架的回调函数，就解决了问题。
+
+这样，实现者(框架的维护者)与调用者(我们)相分离，符合面对对象高内聚低耦合的设计思想。
 
 ## 参考资料
 
-[理解与使用Javascript中的回调函数](http://www.html-js.com/article/Sexy-Javascript-understand-the-callback-function-with-the-use-of-Javascript-in)
+[浅析系统设计中的回调思想](http://blog.csdn.net/a910626/article/details/45920893)
 
 *作者：张喜硕*
