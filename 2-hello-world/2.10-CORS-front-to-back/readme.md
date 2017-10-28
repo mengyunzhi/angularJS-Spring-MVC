@@ -3,7 +3,8 @@
 
 ## 前后台对接
 
-###更改路由
+### 更改路由
+
 1.首先我们要把前台控制器的代码修改一下
 ```
 angular.module('webappApp')
@@ -30,6 +31,7 @@ var url = 'http://localhost:9000/data/helloWorld.txt';
 var url = 'http://localhost:8080/helloWorld';
 ```
 2.更改后的结果
+
 改完之后运行一下后台，则会在浏览器控制台中报如下的错误：
 
 ![](image/1.png)
@@ -39,7 +41,8 @@ var url = 'http://localhost:8080/helloWorld';
 ### 后台实现跨域
 
 1.后台代码改动
-我们对Application文件的内容进行一下修改，一开始内容如下：
+
+我们对com.mengyunzhi下的Application文件的内容进行一下修改，一开始内容如下：
 
 ```
 package com.mengyunzhi;
@@ -92,9 +95,6 @@ public class Application {
 
 ![](image/2.png)
 
-
-前期我们不需要深入了解什么是跨域，我们只要清楚如何实现跨域就可以了。
-
 详细内容请参考[官方文档](http://spring.io/guides/gs/rest-service-cors/) 
 
 ## 跨域
@@ -103,19 +103,19 @@ public class Application {
 ### 什么是跨域
 
 1.同源
+
 与跨域相对的便是同源，什么是同源呢？
 **同源**出于保护用户信息安全的目的，现在的浏览器都会实施“同源策略”这个政策，所谓“同源策略”指的是不同源的客户端脚本在没有明确授权情况下，不允许读写对方的资源。
 
-```
 举个例子，你家的小孩带了他的朋友来你们的家里玩，你家的小孩如果要在自家屋里拿玩具玩、拿东西吃你自然是不会阻止，但是如果你家小孩的朋友人品不行，乱拿东西吃、乱翻你家的东西，你自然不允许。
-```
 
 2.跨域
+
 同源策略限制了来自一个域的站点向另一个域请求数据,而跨域资源共享策略解放了同源策略,它允许JavaScript在一个页面上使用不同来源的REST API服务。
 
-```
+
 但如果这个小孩经常来你家玩，这个小孩很听话也很招人喜欢，这时候什么玩的和吃的他就可以随便拿了，这就实现了所谓的跨域。
-```
+
 
 ### 跨域的特征
 
@@ -131,6 +131,5 @@ public class Application {
 详细内容可参考
 [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/04/cors.html) 
 
-### 
 
 
