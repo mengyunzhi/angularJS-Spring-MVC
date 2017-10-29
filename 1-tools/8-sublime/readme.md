@@ -25,7 +25,9 @@
 会跳出你下载的sublime，此时证明你安装成功。
 
 ### 解决ubuntu下sublime无法输入中文的问题:
+
 安装成功后你并不能应用拼音输入法，这里介绍一种较为简单的方法。
+
 1.下载我们需要的文件，打开终端，输入：
 
 `git clone https://github.com/lyfeyaj/sublime-text-imfix.git`
@@ -36,7 +38,7 @@
 
 依次输入以下命令
 
-- `cd ~/sublime-text-imfix`
+- `cd ./sublime-text-imfix`
 - `sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/`
 - `sudo cp ./src/subl /usr/bin/`
 
@@ -58,5 +60,25 @@
 - Emmet html 必备神器
 - Html-CSS-JS Prettify 美化代码
 - SideBarEnhancements 增强左侧菜单
+
 安装可参考 [百度经验](https://jingyan.baidu.com/album/4d58d541caeeaa9dd4e9c093.html?picindex=1)
+
+### 常见问题
+1.代码格式化出错：
+
+![](image/7.png)
+
+点击确定，它提示代码格式化需要依赖node，但找不到node，这时你就要找到你的node安装的路径。
+
+你在装nodejs的时候装到了/opt/nodejs/bin/node下，但sublime默认的是/usr/bin/nodejs：
+
+![](image/8.png)
+
+把它改为你的node对应的路径就可以了
+
+![](image/9.png)
+
+这样问题就解决了。
+
+
 *作者：陈志高*
