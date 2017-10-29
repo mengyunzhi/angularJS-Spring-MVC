@@ -1,5 +1,4 @@
-# 前后台连接和CORS
-
+# 前后台跨域连接
 上节我们完成了后台代码的编写，这节我们将实现把后台的数据传到前台并显示。
 
 ## 前后台对接
@@ -7,7 +6,6 @@
 ### 更改路由
 
 1.首先我们要把前台控制器的代码修改一下
-
 ```
 angular.module('webappApp')
   .controller('MainCtrl', function($scope, $http) {
@@ -20,34 +18,31 @@ angular.module('webappApp')
       });
   });
 ```
-
-根本性的变化如下：
+**根本性的变化如下**：
 
 请求前台的模拟数据，对应的路由为：
 
 ```
 var url = 'http://localhost:9000/data/helloWorld.txt';
 ```
-
-请求后台的数据，那么就要对路由进行一下改写如下：
+如果我们想要请求后台的数据，那么就要对路由进行一下改写如下：
 
 ```
 var url = 'http://localhost:8080/helloWorld';
 ```
-
 2.更改后的结果
 
 改完之后运行一下后台，则会在浏览器控制台中报如下的错误：
 
 ![](image/1.png)
 
-这里它说 No“:9000”，端口不一致，从而导致跨域请求，下面我们先通过对后台进行相应的配置来实现跨域资源分享。
+下面我们将通过对后台进行相应的配置来实现跨域。
 
 ### 后台实现跨域
 
 1.后台代码改动
 
-我们对com.mengyunzhi文件夹下Application文件的内容进行一下修改，开始内容如下：
+我们对com.mengyunzhi下的Application文件的内容进行一下修改，一开始内容如下：
 
 ```
 package com.mengyunzhi;
@@ -96,13 +91,9 @@ public class Application {
 注意 ：/**
 
 2.修改后结果显示
-
 再次重启一下后台，再次查看控制台，控制台不会报错，实现了前后台连接。
 
 ![](image/2.png)
-
-
-到这里，我们已经完成了跨域资源分享。
 
 详细内容请参考[官方文档](http://spring.io/guides/gs/rest-service-cors/) 
 
@@ -118,7 +109,6 @@ public class Application {
 
 举个例子，你家的小孩带了他的朋友来你们的家里玩，你家的小孩如果要在自家屋里拿玩具玩、拿东西吃你自然是不会阻止，但是如果你家小孩的朋友人品不行，乱拿东西吃、乱翻你家的东西，你自然不允许。
 
-
 2.跨域
 
 同源策略限制了来自一个域的站点向另一个域请求数据,而跨域资源共享策略解放了同源策略,它允许JavaScript在一个页面上使用不同来源的REST API服务。
@@ -130,13 +120,11 @@ public class Application {
 ### 跨域的特征
 
 同源的特征：
-
 - 同协议：如都是http或https
 - 同域名：主机名/子域名或者IP地址
-如都是``` www.mengyunzhi.com/webapp/helloWorld.html ```和```www.mengyunzhi.com/index.html```
-这里的 ```www.mengyunzhi.com```是域名。
+如都是``` terenyeung.applinzi.com/newapp/carousel.html ```和```terenyeung.applinzi.com/index.html```
+这里的 ```terenyeung.applinzi.com```是域名。
 - 同端口：如都是80端口
-
 跨域：
 只要不满足同源特征的三点之一的就是跨域。
 

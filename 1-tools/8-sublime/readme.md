@@ -25,7 +25,9 @@
 会跳出你下载的sublime，此时证明你安装成功。
 
 ### 解决ubuntu下sublime无法输入中文的问题:
+
 安装成功后你并不能应用拼音输入法，这里介绍一种较为简单的方法。
+
 1.下载我们需要的文件，打开终端，输入：
 
 `git clone https://github.com/lyfeyaj/sublime-text-imfix.git`
@@ -36,7 +38,7 @@
 
 依次输入以下命令
 
-- `cd ~/sublime-text-imfix`
+- `cd ./sublime-text-imfix`
 - `sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/`
 - `sudo cp ./src/subl /usr/bin/`
 
