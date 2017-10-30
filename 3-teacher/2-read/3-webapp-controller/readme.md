@@ -65,7 +65,7 @@ angular.module('testApp')
   });
 ```
 
-接着我们来写`v`层，前面我们讲过`$scope`相当于`Thinkphp`中的`this->assign();`,能将`c`层的数据传递到`v`层，现在我们的`v`层要接受并显示数据，代码如图。
+接着我们来写`v`层，前面我们讲过`$scope`相当于`Thinkphp`中的`this->assign();`,能将`c`层的数据传递到`v`层，现在我们的`v`层要接受并显示数据，代码如下。
 
 
 ``` html
