@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorld {
 
-	// RequestMapping注解：将/helloWorld映射到say方法上。
+    // RequestMapping注解：将/helloWorld映射到say方法上。
     @RequestMapping("/helloWorld")
     public String say() {
         return "hello world api";
@@ -58,7 +58,7 @@ public String say() {
 
 ## 方法修改
 
-既然前台需要对象，那我们就返回一个对象，对方法进行如下修改。
+既然前台需要对象，那我们就返回一个`Json`对象，对方法进行如下修改。
 
 ```java
 package com.mengyunzhi.controller;
@@ -70,11 +70,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorld {
 
-	// RequestMapping注解：将/helloWorld映射到say方法上。
+    // RequestMapping注解：将/helloWorld映射到say方法上。
     @RequestMapping("/helloWorld")
     public SayHello say() {
     
-    	// 新建一个SayHello类的对象sayHello
+        // 新建一个SayHello类的对象sayHello
         SayHello sayHello = new SayHello();
         // 调用sayHello的setValue方法，设置value为"hello world api"
         sayHello.setValue("hello world api");
@@ -82,7 +82,7 @@ public class HelloWorld {
         return sayHello;
     }
 
-	// 定义一个静态内部类SayHello
+    // 定义一个静态内部类SayHello
     public static class SayHello {
     
         private String value;
@@ -99,5 +99,17 @@ public class HelloWorld {
 ```
 
 我们在控制器中定义了一个静态内部类，`say`方法中新建`SayHello`对象，设置`value`，返回该对象。
+
+有人可能会有疑问了，我们这里返回的可以是任意一个类的对象，前台需要的是`Json`格式的对象啊？那么`SpringMVC`返回给前台的到底是什么，我们来试一下。
+
+![](image/1.png)
+
+运行项目，`com.mengyunzhi.Application : Started Application`。
+
+打开浏览器，输入`http://127.0.0.1:8080/helloWorld`，我们看到返回的就是一个`Json`对象！
+
+![](image/2.png)
+
+我们建立`HelloWorld`类时使用的注解是`@RestController`，该方法不单单定义一个控制器，而且声明为`Restful`风格，将返回的对象转化为我们常用的轻量级的`Json`格式。
 
 前台获取到这个对象后，直接调用`value`属性就能获取我们要传过去的`"hello world api"`了。
