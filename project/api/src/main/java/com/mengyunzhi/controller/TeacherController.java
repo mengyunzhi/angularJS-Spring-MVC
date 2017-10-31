@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Constructor")
-public class ConstructorController {
+@RequestMapping("/Teacher")
+public class TeacherController {
     @Autowired
     private TeacherRepository constructorRepository;
     @GetMapping("/")
