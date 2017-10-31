@@ -30,15 +30,16 @@
 
 ```
 <dependencies>
-		<dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency> 
  </dependencies>
 ```
 
@@ -70,9 +71,9 @@
 
 之后需要重新导入依赖模块。
 
-#### 测试
+### 测试
 
-点击右上角启动按钮![](image/9.png) ，查看`idea`的控制台，得到以下错误提示：
+点击右上角启动按钮![](image/9.png) ，查看`IDEA`的控制台，得到以下错误提示：
 
 ```
 ***************************
@@ -88,7 +89,7 @@ Cannot determine embedded database driver class for database type NONE
 
 #### 配置JPA
 
-在`main`下创建`resources`文件，在`resources`文件下新建文件`application.properties`，文件目录如下图。
+在`main`下创建`resources`文件夹，在`resources`文件下新建文件`application.properties`，文件目录如下图。
 
 配置以下信息：
 
@@ -164,13 +165,15 @@ public class Teacher {
 
 ![](image/2017-10-31-08-55-27.png) 
 
+![](image/2017-10-31-09-54-55.png) 
+
 #### 增加其它属性
 
 参考`ER`图
 
 ![](image/2017-10-31-08-59-05.png) 
 
-相关代码如去下：
+相关代码如下：
 
 ```java
 package com.mengyunzhi.repository;
