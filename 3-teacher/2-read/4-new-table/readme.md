@@ -1,13 +1,13 @@
 
-## 3.2.4添加`jpa`和`mysql`模块及新建数据表
+## 3.2.4连接MYSQL及新建数据表
 
-#### 添加`jpa`和`mysql`模块
+#### 添加依赖模块
 
 在项目的后台生成时，我们在根目录下的`pom.xml`写入了`springmvc`的核心模块和单元测试模块。
 
 即如下代码：
 
-```
+```xml
 <dependencies>
         <!--spring-boot框架下的web项目依赖-->
         <dependency>
@@ -24,11 +24,12 @@
  </dependencies>
 ```
 
-本节中，我们将使用`mysql`做为后台的数据库。此时，我们需要加入`jpa`模块来说明:本项目是需要关系型数据库来支撑的；我们需要加入`mysql`模块，来说明：本项目使用的关系型数据库的类型为`mysql`。
+本节中，我们将使用`mysql`做为后台的数据库。所以我们需要加入`mysql`模块，来说明：本项目使用的数据库类型为`mysql`。
+`mysql`是一种关系型数据库，在`SpringMVC`中，我们还需要加入`jpa`模块来说明: 本项目是需要关系型数据库来支撑的。
 
 打开`pom.xml`的如下代码段
 
-```
+```xml
 <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,7 +46,7 @@
 
 添加`jpa`和`mysql`模块后
 
-```
+```xml
 <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,7 +70,15 @@
  </dependencies>
 ```
 
-之后需要重新导入依赖模块。
+保存`pom.xml`后，`IDEA`将会自动为我们导入`jpa`及`mysql`依赖，此时，你可以在`IDEA`的最下方状态栏看到依赖包的下载过程。如果`IDEA`没有自动的触发该动作，我们也可以在`pom.xml`上按右键参照下图，实现手动导入。
+
+![](image/2.png) 
+
+导入成功，我们可以 在`Extenrnal Libraries`中找到这两个依赖如图：
+
+![](image/2017-10-31-20-04-03.png)
+ ![](image/2017-10-31-20-05-30.png) 
+ ![](image/2017-10-31-20-07-09.png) 
 
 ### 测试
 
@@ -85,18 +94,31 @@ Description:
 Cannot determine embedded database driver class for database type NONE
 ```
 
-这是`jpa`模块给我们的一个提示，它在说，虽然我已经启动了，但是你没有告诉我要连接的数据库类型是什么。当然了，除了要告诉它要连接的数据库类型(`mysql`)以外，我们还需要告诉它要连接的数据名称是什么，对应的用户名和密码又都是什么。
+中文翻译为：
 
-#### 配置JPA
+```
+***************************
+应用程序启动失败
+***************************
 
-在`main`下创建`resources`文件夹，在`resources`文件下新建文件`application.properties`，文件目录如下图。
+描述：
+无法确定为类型为NONE的数据库嵌入数据库驱动类
+```
 
-配置以下信息：
+是的，正如我们翻译后看到的信息一样，我们虽然在`pom.xml`加入`mysql`模块，但却并没有告诉`SpringMVC`我们在本项目中需要使用`mysql`数据库。
+这就像学校偷偷的盖了一个游泳馆，但却没有告诉全校的学生游泳馆已经可以使用了。此时，你给学生下达去游泳的指令，他们当然不知道应该去哪里游泳了。
+在`SpringMVC`中，要想成功的与`mysql`数据库连接，我们还需要配置一些数据库连接信息。
+
+#### 配置mysql
+
+在`SpringMVC`中，项目的配置文件位于`main/resources/application.properties`。下面，我们在`main`下创建`resources`文件夹，在`resources`文件下新建文件`application.properties`，文件目录如下图。
+
+配置以下信息,让`SpringMVC`为我们自动创建数据表：
 
 ```
 # 在项目初始化时，重新创建数据表
 spring.jpa.hibernate.ddl-auto=create
-# 指定连接的类型为mysql 连接的地址为：localhost 端口为3306 ，数据为angularjs-springmvc
+# 指定连接的类型为mysql 连接的地址为：localhost 端口为3306 ，数据库为angularjs-springmvc
 spring.datasource.url=jdbc:mysql://localhost:3306/angularjs-springmvc
 # 用户名为root
 spring.datasource.username=root
@@ -116,15 +138,22 @@ spring.datasource.password=
 2017-10-30 17:04:50.874  INFO 5880 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
 2017-10-30 17:04:50.877  INFO 5880 --- [           main] com.mengyunzhi.Application               : Started Application in 4.667 seconds (JVM running for 5.663)
 ```
+
+如果你不小心忘记了启动`mysql`，那么将得到以下错误：
+
+![](image/2017-10-31-20-39-17.png) 
+
+此时，只需要启动`mysql`服务即可。
+
 > 参考官方文档[https://spring.io/guides/gs/accessing-data-mysql/](https://spring.io/guides/gs/accessing-data-mysql/) 
 
 ### 新建数据表
 
 `SpringMVC`中集成了`hibernate`框架，所以在`SrpingMVC`中有关系型数据库的部分，我们完全可以参考`hibernate`的开发文档。`hibernate`为我们提供了这样一个功能：将带有相关注解的`java`类自动与数据表进行关联。从而使我们可以完全的使用`java`代码来定义数据表。这样的做的优点当然很多，对于我们而言，我们再也不需要为了数据表不统一造成的各种莫名`BUG`而烦恼了。
 
-> `JPA`全称`Java Persistence API`,`JPA`通过`JDK 5.0`注解或`XML`描述对象－关系表的映射关系，并将运行起的实体对象持久化到数据库中。[http://baike.baidu.com/item/JPA](http://baike.baidu.com/item/JPA) 
+> 通过`JDK 5.0`注解或`XML`描述对象－关系表的映射关系，并将运行起的实体对象持久化到数据库中----这就是`JPA(Java Persistence API)`。[http://baike.baidu.com/item/JPA](http://baike.baidu.com/item/JPA) 
 
-#### 新建实体类
+#### 新建数据表
 
 我们新建`repository`包，并在该包中，新建`Teacher`类。 
 
@@ -252,13 +281,6 @@ public class Teacher {
                 '}';
     }
 
-    public Teacher(String name, Boolean sex, String email, String username) {
-        this.name = name;
-        this.sex = sex;
-        this.email = email;
-        this.username = username;
-    }
-
     public Teacher() {
     
     }
@@ -305,7 +327,11 @@ public class Teacher {
 }
 ```
 
-最后，我们重新运行项目，以确保未发生拼写错误。
+#### 测试
+
+打开`workbench `查看最新生成的数据表。
+
+![](image/2017-10-31-21-06-47.png) 
 
 > 官方文档：[java与数据表类型对照](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#basic-provided) 
 
