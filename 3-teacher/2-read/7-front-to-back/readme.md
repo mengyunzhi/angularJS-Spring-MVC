@@ -145,6 +145,7 @@ registry.addMapping("/**").allowedOrigins("http://localhost:9000");
 ![](image/5.png) 
 
 
+
 ## 引用boostrap样式
 
 如果你觉得这个页面很丑，这里我们可以引用bootstrap样式，厉害的是我们在用yeoman搭建项目的时候，它就已经帮我们把bootstrap引入了进来。我们只需要会用它就行。
@@ -184,7 +185,10 @@ registry.addMapping("/**").allowedOrigins("http://localhost:9000");
                                              ——潘老师
 
 
-
+在命令行中输入获得示例代码：
+```git
+git checkout 3.2.7-frount-to-back
+```
 
 ---
 *作者：陈志高*
