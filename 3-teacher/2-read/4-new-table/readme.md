@@ -338,6 +338,8 @@ public class Teacher {
 
 执行`git checkout  3.2.4-api-new-table`命令后，你本机的代码，已经和我们本节教程一致了。
 
+![](image/2017-11-01-22-18-48.png) 
+
 ---
 
 作者：朱晨澍
