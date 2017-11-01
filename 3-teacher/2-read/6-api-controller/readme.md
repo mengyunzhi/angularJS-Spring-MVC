@@ -110,13 +110,21 @@ public class TeacherController {
 
 ## 设置CORS
 
-还记得我们在前面遇到的跨域的问题吗。
+还记得我们在前面遇到的跨域的问题吗?我们在启动项 `Application` 做了跨域设置。
 
 ![](image/2017-10-31.6.png)
 
-没错，我们是这样解决的。但是现在我们又新建了一个 `TeacherController` 控制器，有了新的路由，那么原来原来添加的 `addMapping` 依然映射到 `/helloWorld` 这个路由上，所以为了让它映射到我们新的路由，同时后面设置新路由时也不用再改一次，我们就将 `addMapping` 设置成 `/**`。
+没错，我们是这样解决的。但是现在问题又来了，我们又新建了一个 `TeacherController` 控制器，有了新的路由 `/Teacher` ，而原来原来添加的 `addMapping` 依然映射到 `/helloWorld` 这个路由上。所以为了让它映射到我们新的路由，同时后面设置新路由时也不用再改一次，我们就将 `addMapping` 设置成 `/**`。
+
+![](image/2017-10-31.7.png)
 
 最后再重启一下项目，没有报错。
+
+#### 查看示例代码
+
+```bash
+git checout -f 3.2.6-api-cotroller-cors-set
+```
 
 -----------------------
 
