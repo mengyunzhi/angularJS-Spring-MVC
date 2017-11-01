@@ -10,7 +10,7 @@
 
 自动载入 `TeacherRepository`
 
-```
+```java
 ...
 @RestController
 @RequestMapping("/Teacher")
@@ -23,7 +23,7 @@ public class TeacherController {
 
 添加 `getAll` 方法，并设置路由
 
-```
+```java
     ...
     // GetMapping注解：设置路由，表示该方法只接受 get 请求
     @GetMapping("/")
@@ -34,11 +34,12 @@ public class TeacherController {
 
 直接通过 `teacherRepository` 中的 `findAll` 方法获取所有的教师信息。
 
-```
+```java
 ...
     // GetMapping注解：设置路由，表示该方法只接受 get 请求
     @GetMapping("/")
     public List<Teacher> getAll() {
+        // (List<Teacher>):数据类型转换
         List<Teacher> teachers = (List<Teacher>) teacherRepository.findAll();
         return teachers;
     }
@@ -49,7 +50,7 @@ public class TeacherController {
 
 最终代码如下：
 
-```
+```java
 package com.mengyunzhi.controller;
 
 import com.mengyunzhi.repository.Teacher;
@@ -114,7 +115,9 @@ public class TeacherController {
 
 ![](image/2017-10-31.6.png)
 
-没错，我们是这样解决的。但是现在问题又来了，我们又新建了一个 `TeacherController` 控制器，有了新的路由 `/Teacher` ，而原来原来添加的 `addMapping` 依然映射到 `/helloWorld` 这个路由上。所以为了让它映射到我们新的路由，同时后面设置新路由时也不用再改一次，我们就将 `addMapping` 设置成 `/**`。
+没错，我们是这样解决的。但是现在问题又来了，我们又新建了一个 `TeacherController` 控制器，有了新的路由 `/Teacher` ，而原来原来添加的 `addMapping` 依然映射到 `/helloWorld` 这个路由上。所以为了让它映射到我们新的路由，我们可以在上 `addMapping` 添加一个 `/Teacher` 。
+
+但是，如果我们每新加一个路由就要重新设置一次跨域，这就太麻烦了。所以，为了减少我们的工作量，少做重复工作，我们最终将 `addMapping` 设置为 `/**`。
 
 ![](image/2017-10-31.7.png)
 
