@@ -333,7 +333,10 @@ public class Teacher {
 
 ![](image/2017-10-31-21-06-47.png) 
 
+
 > 官方文档：[java与数据表类型对照](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#basic-provided) 
+
+执行`git checkout  3.2.4-api-new-table`命令后，你本机的代码，已经和我们本节教程一致了。
 
 ---
 
