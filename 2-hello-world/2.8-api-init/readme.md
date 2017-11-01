@@ -247,7 +247,12 @@ public class HelloWorld {
 
 到此为止，我们的项目已经创建完毕。
 
+### 查看示例代码
+
+```bash
+git checkout -f 3.2.8-api-init
+```
 ---------------------------------------
 官方参考文档：[http://spring.io/guides/gs/rest-service/](http://spring.io/guides/gs/rest-service/)
 
-**作者：[朴世超](www.mengyunzhi.cn)** 
+***作者：[朴世超](www.mengyunzhi.cn)***

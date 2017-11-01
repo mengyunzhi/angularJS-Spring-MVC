@@ -120,7 +120,7 @@ public class TeacherController {
 
 最后再重启一下项目，没有报错。
 
-#### 查看示例代码
+### 查看示例代码
 
 ```bash
 git checout -f 3.2.6-api-cotroller-cors-set
@@ -128,4 +128,4 @@ git checout -f 3.2.6-api-cotroller-cors-set
 
 -----------------------
 
-***作者：朴世超***
+***作者：[朴世超](www.mengyunzhi.cn)***
