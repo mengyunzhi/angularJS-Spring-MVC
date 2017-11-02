@@ -31,7 +31,7 @@
     * [3.2.2:前台视图层](3-teacher/2-read/2-webapp-view/readme.md)
     * [3.2.3:前台控制器](3-teacher/2-read/3-webapp-controller/readme.md)
     * [3.2.4:建立数据库](3-teacher/2-read/4-new-table/readme.md)
-    * [3.2.5:连接数据库](3-teacher/2-read/5-link-table/readme.md)
+    * [3.2.5:操作数据表](3-teacher/2-read/5-link-table/readme.md)
     * [3.2.6:后台控制器](3-teacher/2-read/6-api-controller/readme.md)
     * [3.2.7:前后台对接](3-teacher/2-read/7-front-to-back/readme.md)
     * [3.2.8:引入Bootstrap](3-teacher/2-read/8-bootstrap/readme.md)
