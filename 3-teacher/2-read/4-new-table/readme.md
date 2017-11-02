@@ -5,28 +5,6 @@
 
 在项目的后台生成时，我们在根目录下的`pom.xml`写入了`springmvc`的核心模块和单元测试模块。
 
-<<<<<<< HEAD
-=======
-即如下代码：
-
-```xml
-<dependencies>
-        <!--spring-boot框架下的web项目依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        
-        <!--spring-boot 单元测试依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency> 
- </dependencies>
-```
-
->>>>>>> origin/master
 本节中，我们将使用`mysql`做为后台的数据库。所以我们需要加入`mysql`模块，来说明：本项目使用的数据库类型为`mysql`。
 `mysql`是一种关系型数据库，在`SpringMVC`中，我们还需要加入`jpa`模块来说明: 本项目是需要关系型数据库来支撑的。
 
@@ -100,7 +78,6 @@ Cannot determine embedded database driver class for database type NONE
 ```
 
 中文翻译为：
-<<<<<<< HEAD
 
 ```
 ***************************
@@ -119,26 +96,6 @@ Cannot determine embedded database driver class for database type NONE
 
 在`SpringMVC`中，项目的配置文件位于`main/resources/application.properties`。下面，我们在`main`下创建`resources`文件夹，在`resources`文件下新建文件`application.properties`，文件目录如下图。
 
-=======
-
-```
-***************************
-应用程序启动失败
-***************************
-
-描述：
-无法确定为类型为NONE的数据库嵌入数据库驱动类
-```
-
-是的，正如我们翻译后看到的信息一样，我们虽然在`pom.xml`加入`mysql`模块，但却并没有告诉`SpringMVC`我们在本项目中需要使用`mysql`数据库。
-这就像学校偷偷的盖了一个游泳馆，但却没有告诉全校的学生游泳馆已经可以使用了。此时，你给学生下达去游泳的指令，他们当然不知道应该去哪里游泳了。
-在`SpringMVC`中，要想成功的与`mysql`数据库连接，我们还需要配置一些数据库连接信息。
-
-#### 配置mysql
-
-在`SpringMVC`中，项目的配置文件位于`main/resources/application.properties`。下面，我们在`main`下创建`resources`文件夹，在`resources`文件下新建文件`application.properties`，文件目录如下图。
-
->>>>>>> origin/master
 配置以下信息,让`SpringMVC`为我们自动创建数据表：
 
 ```
