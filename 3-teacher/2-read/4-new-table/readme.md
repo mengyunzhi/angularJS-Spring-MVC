@@ -5,7 +5,10 @@
 
 在项目的后台生成时，我们在根目录下的`pom.xml`写入了`springmvc`的核心模块和单元测试模块。
 
-即如下代码：
+本节中，我们将使用`mysql`做为后台的数据库。所以我们需要加入`mysql`模块，来说明：本项目使用的数据库类型为`mysql`。
+`mysql`是一种关系型数据库，在`SpringMVC`中，我们还需要加入`jpa`模块来说明: 本项目是需要关系型数据库来支撑的。
+
+打开`pom.xml`的如下代码段
 
 ```xml
 <dependencies>
@@ -16,26 +19,6 @@
         </dependency>
         
         <!--spring-boot 单元测试依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency> 
- </dependencies>
-```
-
-本节中，我们将使用`mysql`做为后台的数据库。所以我们需要加入`mysql`模块，来说明：本项目使用的数据库类型为`mysql`。
-`mysql`是一种关系型数据库，在`SpringMVC`中，我们还需要加入`jpa`模块来说明: 本项目是需要关系型数据库来支撑的。
-
-打开`pom.xml`的如下代码段
-
-```xml
-<dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

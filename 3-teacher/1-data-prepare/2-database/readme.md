@@ -31,9 +31,10 @@
 
 ![](image/2017-10-28-17-39-30.png) 
 
-按下图步骤建立数据库，数据库的名字是`angular-springmvc`：
+按下图步骤建立数据库，数据库的名字是`angularjs-springmvc`：
 
-![](image/Peek2017-10-28-19-11.gif)
+![](image/Peek2017-11-0209-27.gif)
+
 
 `utf8 - utf8_general_ci`的意思是使用的编码格式是`utf8`，使用的排序规则为`utf8_general_ci`
 
