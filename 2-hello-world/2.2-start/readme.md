@@ -47,7 +47,7 @@
 
 这里需要等待几分钟，网速不同的情况下，需要等待的时间也不相同。`Clone`成功后如下图所示：
 
-![](/home/zhuchenshu/springmvcAngularjsTutorial/course2/angularJS-Spring-MVC/2-hello-world/2.2-start/image/2017-11-03-16-18-13.png) 
+![](image/2017-11-03-16-18-13.png) 
 
 此时你会发现当前文件夹下面多了一个名为`angularJS-Spring-MVC`的文件夹，这个文件目录如下图所示，在`project`文件夹下面存放着我们的示例代码，`api`下存放后台`springmvc`的示例代码，`webapp`下存放着前台`angularjs`的示例代码,我们可以通过`sublime`打开相应文件查看相应的示例代码。
 
@@ -57,7 +57,7 @@
 
 ```
 cd angularJS-Spring-MVC/                   // 切换到angularJS-Spring-MVC文件下
-git checkout -f 2.2                                    // 将本地代码切换成本节的示例代码
+git checkout -f 2.2                        // 将本地代码切换成本节的示例代码
 ```
 
 > 1.以后我们在教程中只给出第二条命令，比如：`git checkout -f 2.2`
