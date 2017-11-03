@@ -24,7 +24,10 @@
 package com.mengyunzhi.repository;
 
 import org.springframework.data.repository.CrudRepository;
-// 继承框架提供的增删改查接口
+/**
+ * 教师数据操作接口
+ * 继承SpringMVC中提供的增删改查接口
+ */
 public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 
 }
@@ -33,6 +36,10 @@ public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 这里我们的`TeacherRepository`继承了`CrudRepository`接口，这是框架为我们写好的接口，实现了基本的增删改查功能。
 
 ```java
+/**
+ * 教师数据操作接口
+ * 继承SpringMVC中提供的增删改查接口
+ */
 public interface TeacherRepository extends CrudRepository<Teacher, Long>
 ```
 
@@ -40,10 +47,11 @@ public interface TeacherRepository extends CrudRepository<Teacher, Long>
 
 ## 单元测试
 
+测试是保证软件开发质量的重要一环。而想办法测试自己写的每一个函数，每个类是否正确。则是测试的开始。我们把这种用来测试类与函数是否实现了我们的预期功能的测试叫做单元测试。
 
-因为`SpringMVC`开发`web`应用前后台分离，所以为了保证我们的每一个方法都是正确的，我们需要进行单元测试。
+我们以前测试`ThinkPHP`开发的系统时，我们需要去网页上去点击，去看看自己写的方法是否有效，是测试的很多功能集成在一起会的表现，叫做集成测试。
 
-就像我们用测试`ThinkPHP`开发的系统一样，我们需要去网页上去点击，去看看自己写的方法是否有效，而在这里，需要的是测试代码。
+下面，我们正式步入单元测试的殿堂，让我们使用优美可靠的代码来验证我们的程序开发。
 
 打开`TeacherRepository`文件，把光标放在接口名附近，左上角会出现小灯泡，点击，选择`Create Test`。
 
@@ -247,7 +255,9 @@ public class TeacherRepositoryTest {
 }
 ```
 
-我们写了这样一行断言语句，即断言`teachers.size()`和`2`相等。除了`isEqualTo`断言相等之外，还有`isNull`(断言为空)或`isNotNull`(断言不为空)等，我们会在后续章节中学习。断言在单元测试是必不可少的，我们需要熟练掌握断言。
+断言：我们断定。`assertThat(teachers.size()).isEqualTo(2);` -> 我们断定`teachers`的长度为2。
+
+如果最终的结果和我们断定的不一样，我们便会得到一个错误。
 
 ```java
 assertThat(teachers.size()).isEqualTo(2);
@@ -277,7 +287,7 @@ Actual   :3
 输入以下命令即可切换到本小节示例代码标签：
 
 ```
-git checkout 3.2.5-api-link-table-and-data-init
+git checkout -f 3.2.5-api-link-table-and-data-init
 ```
 
 *作者：张喜硕*
