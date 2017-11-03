@@ -49,7 +49,7 @@
 
 ![](image/2017-11-03-16-18-13.png) 
 
-此时你会发现当前文件夹下面多了一个名为`angularJS-Spring-MVC`的文件夹，这个文件目录如下图所示，在`project`文件夹下面存放着我们的示例代码，`api`下存放后台`springmvc`的示例代码，`webapp`下存放着前台`angularjs`的示例代码,我们可以通过`sublime`打开相应文件查看相应的示例代码。
+此时你会发现当前文件夹下面多了一个名为`angularJS-Spring-MVC`的文件夹，这个文件目录如下图所示，在`project/api`下存放后台`springmvc`的项目示例代码，在`project/webapp`下存放着前台`angularjs`的项目示例代码,我们可以通过`sublime`打开相应文件查看相应的示例代码。
 
 ![](image/2017-11-03-16-24-38.png) 
 
