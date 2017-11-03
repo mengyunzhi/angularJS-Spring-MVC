@@ -49,18 +49,19 @@
 
 ![](image/2017-11-03-16-18-13.png) 
 
-此时你会发现当前文件夹下面多了一个名为`angularJS-Spring-MVC`的文件夹，这个文件目录如下图所示，在`project/api`下存放后台`springmvc`的项目示例代码，在`project/webapp`下存放着前台`angularjs`的项目示例代码,我们可以通过`sublime`打开相应文件查看相应的示例代码。
+此时你会发现当前文件夹下面多了一个名为`angularJS-Spring-MVC`的文件夹，这个文件目录如下图所示，在`project/api`下存放后台`springmvc`的项目示例代码，在`project/webapp`下存放着前台`angularjs`的项目示例代码,我们可以通过`sublime`打开相应文件查看示例代码。
 
 ![](image/2017-11-03-16-24-38.png) 
 
-接着在命令行中输入下面几条命令，每条命令输入后需回车执行，执行完成后，再输入下一条命令。
+接着在命令行中输入下面两条命令，通过第一条命令切换到`angularJS-Spring-MVC`文件夹下，通过第二条命令将本地代码切换成本节的示例代码，每条命令输入后需回车执行，执行完成后，再输入下一条命令。
 
 ```
-cd angularJS-Spring-MVC/                   // 切换到angularJS-Spring-MVC文件下
-git checkout -f 2.2                        // 将本地代码切换成本节的示例代码
+cd angularJS-Spring-MVC 
+git checkout -f 2.2 
 ```
 
 > 1.以后我们在教程中只给出第二条命令，比如：`git checkout -f 2.2`
+
 > 2.我们在使用教程中给出的命令前，需要先执行命令切换到angularJS-Spring-MVC文件夹下
 
 我们的代码仓库一直在不断的完善中，如果你按教程中的命令执行git checkout -f xxx发生错误时，可以尝试。
