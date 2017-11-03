@@ -5,7 +5,7 @@
 下面，以Ubuntu 16.04为例，安装过程如下：
 
 ## 下载
-jdk的[官方网站为：](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html),
+jdk的**官方网站为：**[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html),
 
 ![jdk download](image/2017-10-19.1.png)
 
@@ -13,23 +13,24 @@ jdk的[官方网站为：](http://www.oracle.com/technetwork/java/javase/downloa
 
 ## 解压
 
-进入你文件下载的位置，进行解压。
+进入你文件下载的位置，右键，打开终端，输入下面的命令进行解压。
 
 ```bash
-$ tar -zxvf jdk-8u151-linux-x64.tar.gz
+tar -zxvf jdk-8u151-linux-x64.tar.gz
 ```
+
 ![java](image/2017-10-19.2.png)
 
-然后创建一个新的目录用来存放jdk文件。我习惯将文件保存在 `/opt` 目录下，你也可以选择其他位置存放。但一定要记好 `存放位置` ，后面会有用。
+然后创建一个新的文件夹用来存放jdk文件。我习惯将文件保存在 `/opt` 目录下创建一个 `java` 文件夹，你也可以选择其他位置存放。但一定要记好 `存放位置` ，后面会有用。
 
 ```bash
-$ sudo mkdir /opt/java
+sudo mkdir /opt/java
 ```
 
 将解压后的文件移动到创建的目录中。
 
 ```bash
-$ sudo mv jdk1.8.0_151/ /opt/java
+sudo mv jdk1.8.0_151/ /opt/java
 ```
 
 ## 环境配置
@@ -37,45 +38,51 @@ $ sudo mv jdk1.8.0_151/ /opt/java
 先修改 `/etc/environment` 文件。
 
 ```bash
-$ sudo gedit /etc/environment
+sudo gedit /etc/environment
 ```
 
 然后在里面加上下面这段内容
 
 > PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$JAVA_HOME/bin"
-  export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
-  export JAVA_HOME=/opt/java/jdk1.8.0_151
+>
+> export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+>
+> export JAVA_HOME=/opt/java/jdk1.8.0_151
 
 保存，关闭。然后让文件生效。
 
 ```bash
-$ source /etc/enviroment
+source /etc/enviroment
 ```
 
-这只完成了 `第一步`，到这里的配置只能当前生效，电脑重启后就会失效。接下来我们继续配置 `/etc/profile` 文件。
+这只完成了 `第一步`，到这里的配置只能当前生效，电脑重启后就会失效。所以，为了让jdk永久生效，接下来我们还要继续配置 `/etc/profile` 文件。
 
 ```bash
-$ sudo gedit /etc/profile
+sudo gedit /etc/profile
 ```
 
 在文件的最后面加上下面的配置信息。
 
-`#set Java environment
- export JAVA_HOME=/opt/java/jdk1.8.0_151
- export JRE_HOME=$JAVA_HOME/jre
- export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
- export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH`
+> \#set Java environment
+>
+> export JAVA_HOME=/opt/java/jdk1.8.0_151
+>
+> export JRE_HOME=$JAVA_HOME/jre
+>
+> export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+>
+> export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 
 保存，关闭。然后让文件生效。
 
 ```bash
-$ source /etc/profile
+source /etc/profile
 ```
 
 测试一下，是否配置成功。
 
 ```bash
-$ java -version
+java -version
 ```
 
 `注意：` 你的 `版本信息` 是否与你安装的jdk版本一致。
@@ -95,9 +102,9 @@ $ java -version
 依次执行下面的命令：
 
 ```bash
-$ sudo update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_151/bin/java 300 
-$ sudo update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_151/bin/javac 300 
-$ sudo update-alternatives --config java
+sudo update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_151/bin/java 300 
+sudo update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_151/bin/javac 300 
+sudo update-alternatives --config java
 ```
 
 `update-alternatives` 是ubuntu中控制软件版本的工具。
@@ -113,7 +120,7 @@ $ sudo update-alternatives --config java
 然后再执行命令：
 
 ```bash
-$ java -version
+java -version
 ```
 
 ![right jdk](image/2017-10-19.4.png)
@@ -125,3 +132,7 @@ $ java -version
 [JDK 8 and JRE 8 Installation](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
 
 [JDK Installation for Linux Platforms](https://docs.oracle.com/javase/8/docs/technotes/guides/install/linux_jdk.html#BJFGGEFG)
+
+-------------------
+
+***作者：[朴世超](www.mengyunzhi.cn)***

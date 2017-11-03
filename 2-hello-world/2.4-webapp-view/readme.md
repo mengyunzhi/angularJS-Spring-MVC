@@ -13,6 +13,8 @@
 <h1>{{helloWorld}}</h1>
 ```
 
+![](image/2017-11-03.1.png)
+
 然后我们看一下我们界面有什么变化。
 
 ![hello world](image/2017-10-23.1.png)
@@ -21,7 +23,7 @@
 
 ## 数据绑定
 
-在 `angularjs` 中，我们通常会在 `view` 层使用双花括号： `{{}}` 来绑定 `$scope` 上的变量。也就是说`{{}}`中的 `helloWorld` ，会自动的赋值为 `main.js` 中 `$scope.helloworld` 的值。
+在 `angularjs` 中，我们通常会在 `view` 层使用双花括号： `{{}}` 来绑定 `$scope` 上的变量。也就是说`{{helloWorld}}`中的 `helloWorld` ，会自动的赋值为 `main.js` 中 `$scope.helloworld` 的值。
 
 **main.js**
 
@@ -50,11 +52,11 @@ angular.module('testApp')
 
 ## 双向数据绑定
 
- `Angularjs` 的一个核心就是 `双向数据绑定` 。
+`双向数据绑定` 是 `Angularjs` 的核心之一。
  
  ![towway-data-bind](image/2017-10-25.3.png)
  
- 所谓双向数据绑定，简单来说就是 `main.html` 做了一个修改，它会自动同步在 `main.js` 中，同样的，`main.js` 有了变化，也会自动同步到 `main.html` 中去。上代码。
+ 所谓双向数据绑定，简单来说就是 `main.html(v层)` 做了一个修改，它会自动同步在 `main.js(c层)` 中，同样的，`main.js(c层)` 有了变化，也会自动同步到 `main.html(v层)` 中去。上代码。
  
  **main.html**
  
@@ -87,6 +89,8 @@ angular.module('testApp')
 
 双向数据绑定让我们只用进行一次绑定，而无需关心C层的变化。我们用了一份的精力，却完成了原来的两项工作。就这就是双向数据绑定的神奇之处。
 
+## 官方
+
 ### 查看示例代码
 
 打开终端，输入命令：
@@ -98,6 +102,11 @@ git checkout -f 2.4
 ![](image/2017-11-01.1.png)
 
 ----------------------
+
+**官方参考文档：**
+[https://docs.angularjs.org/api/ng/directive/ngBind](https://docs.angularjs.org/api/ng/directive/ngBind)
+
+[https://docs.angularjs.org/guide/databinding](https://docs.angularjs.org/guide/databinding)
 
 ***作者：[朴世超](www.mengyunzhi.cn)***
 
