@@ -12,7 +12,7 @@ angular.module('testApp')
     $scope.data = {
       name: '',
       email: '',
-      sex: '0',
+      sex: 'false',
       username: ''
     };
 
