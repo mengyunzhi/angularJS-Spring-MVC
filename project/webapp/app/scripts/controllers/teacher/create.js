@@ -9,6 +9,12 @@
  */
 angular.module('testApp')
   .controller('TeacherCreateCtrl', function($scope) {
+  	$scope.data = {
+  		name: '',
+  		email: '',
+  		sex: '0',
+  		username: ''
+  	};
     $scope.submit = function() {
     	console.log('submit');
     };
