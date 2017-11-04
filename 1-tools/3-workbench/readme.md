@@ -1,36 +1,48 @@
-## 第三节：NAVICAT
+#第三节 MySQL Workbench
 
-Navicat是香港卓软数码科技有限公司生产的一系列MySQL、MariaDB、Oracle、SQLite、PostgreSQL 及Microsoft SQL Server图形化资料库管理及发展软件。
+我们在项目中用的数据库工具是MySQL Workbench。
+ 
+**这里我们介绍两种安装方式：**
 
-**windows上安装**
+## 命令安装
 
-Navicat官方下载地址：
+1.更新系统软件源：
 
-[https://www.navicat.com.cn/download](https://www.navicat.com.cn/download) 
+`sudo apt-get update`
 
-推荐下载如下图中红框标识的版本：
+![](image/3.png) 
 
-![](image/2016-06-24_576c8cfcece38.png) 
+2.使用以下命令安装MySQL Workbench：
 
-**ubuntu上安装**
+`sudo apt-get install mysql-workbench`
 
-Navicat官方下载地址：
+![](image/4.png) 
 
-[https://www.navicat.com/en/products](https://www.navicat.com/en/products) 
+3.命令行输入命令：`mysql-workbench`
 
-下载上图所示版本
-1. 下载 navicat110_mysql_en.tar.gz 文件 
-2. 下载后解压tar文件
+这时会跳出MySQL Workbench登录页面
 
-`tar -zxvf  /home/rain/download/navicat8_mysql_en.tar.gz`
+![](image/5.png) 
 
-3. 解压后  进入解压后的目录运行命令：
+这时你已经成功完成本节安装MySQL Workbench的任务。
 
-`./start_navicat`
+下面是简单使用介绍可参考：[百度经验](https://jingyan.baidu.com/album/3f16e003c2da162591c103e4.html?picindex=1)
 
-OK，这样就完啦
-如果使用不顺手，可以选择在ubuntu商店上下载Mysql Workbrench 
+##MySQL Workbench软件商店安装
 
----
+1.打开软件商店，搜索MySQL Workbench：
 
-作者：朱晨澍
+![](image/1.png) 
+
+2.点击安装，会跳出认证框，输入用户密码并验证：
+
+![](image/2.png) 
+
+在菜单栏中会显示下载进度当下载成功后，会跳出如下页面：
+
+![](image/5.png) 
+
+以上是workbench的安装，我们在之后的教程中会更详细地讲它的用法。
+
+
+作者：陈志高
