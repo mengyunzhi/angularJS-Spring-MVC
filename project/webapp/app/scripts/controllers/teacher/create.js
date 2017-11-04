@@ -8,7 +8,7 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('TeacherCreateCtrl', function($scope, $http) {
+  .controller('TeacherCreateCtrl', function($scope, $http, $location) {
     $scope.data = {
       name: '',
       email: '',
@@ -22,6 +22,8 @@ angular.module('testApp')
         .post(url,$scope.data)
         .then(function() {
         	console.log('success');
+        	console.log($location);
+        	$location.path('/');
         }, function() {
         	console.log('error');
         });
