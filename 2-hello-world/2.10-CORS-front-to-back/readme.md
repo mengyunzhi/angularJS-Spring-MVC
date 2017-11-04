@@ -144,7 +144,7 @@ public class Application {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-            	// 实现前后台的路由
+            	// 允许跨域请求
                 registry.addMapping("/helloWorld").allowedOrigins("http://localhost:9000");
             }
         };
@@ -152,7 +152,6 @@ public class Application {
 }
 ```
 
-注意 ：
 
 ### 结果显示
 
