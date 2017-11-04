@@ -8,14 +8,23 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('TeacherCreateCtrl', function($scope) {
-  	$scope.data = {
-  		name: '',
-  		email: '',
-  		sex: '0',
-  		username: ''
-  	};
-    $scope.submit = function() {
-    	console.log('submit');
+  .controller('TeacherCreateCtrl', function($scope, $http) {
+    $scope.data = {
+      name: '',
+      email: '',
+      sex: '0',
+      username: ''
     };
+
+    $scope.submit = function() {
+      var url = 'http://127.0.0.1:8080/Teacher/';
+      $http
+        .post(url,$scope.data)
+        .then(function() {
+        	console.log('success');
+        }, function() {
+        	console.log('error');
+        });
+    };
+
   });
