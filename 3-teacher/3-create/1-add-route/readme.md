@@ -50,7 +50,7 @@
 
 将上面的代码加入到路由配置文件`app.js`中后代码如下。
 
-```javascropt
+```javascript
 .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
