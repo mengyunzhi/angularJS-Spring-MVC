@@ -24,11 +24,11 @@
   });
 ```
 `$routeProvider `用来定义路由表，我们会用到里面的`when`和`otherwise`两个方法。在本节中我们主要讲`when`方法，然后用`when`方法创建一个我们自己的路由。
-`when`方法能够接收两个参数，第一个参数是路由路径，这个路径会与`URL`中的值进行匹配，如果没有任何一个when方法匹配到，那么将会执行otherwise方法。第二个参数是配置对象，在这里我们用到了`templateUrl`这个参数。
+`when`方法能够接收两个参数，第一个参数是路由路径，这个路径会与`URL`中的值进行匹配，如果没有任何一个`when`方法匹配到，那么将会执行`otherwise`方法。第二个参数是配置对象，在这里我们用到了`templateUrl`这个参数。
 
-`templateUrl` 的值是视图的路径，AngularJS会拿该路径下的Html模板来渲染。
+`templateUrl` 的值是视图的路径，`AngularJS`会拿该路径下的`html`模板来渲染。
 
-下面我们来新建一个视图并未它配置路由：
+下面我们来新建一个视图并为它配置路由：
 
 在`views`文件夹下建一个`teacher`文件夹，在`teacher`夹下创建我们的视图文件`create.html`并写入`teacher/create.html`如下图。
 
