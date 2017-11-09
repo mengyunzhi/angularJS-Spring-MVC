@@ -18,7 +18,7 @@ angular.module('testApp')
     });
 ```
 
-这里，我们将一个对象赋值个 `data`，是的，就是一个对象。它包含了表单中对应的所有变量。这就和 `ThinkPHP` 中 `$this->assign()` 函数是一样的作用，它告诉V层应该显示哪个变量对应的数据，同时，也是后面实现双向数据绑定的基础。
+这里，我们将一个对象赋值给 `data`，是的，就是一个对象。它包含了表单中对应的所有变量。`$scope.data` 就和 `ThinkPHP` 中 `$this->assign()` 是一样的作用，它告诉V层你可以调用data对象中的属性。同时，它也是后面实现双向数据绑定的基础。
 
 ## 初始化data
 
@@ -68,7 +68,9 @@ angular.module('testApp')
 <form ng-submit="submit()">
     <pre>{{submit}}</pre>
     <pre>{{data | json}}</pre>
+    <!--ng-model用来实现双向数据绑定-->
     <label>姓名：
+        <!--data.name:data对象的name属性-->
         <input type="text" name="name" ng-model="data.name">
     </label>
     <br>
@@ -91,7 +93,7 @@ angular.module('testApp')
 </form>
 ```
 
-前面我们已经知道了， `ng-model` 是实现双向数据绑定的一个条件。`data.name` 这种写法表示的是 `data` 对象的 `name` 属性。
+前面我们已经知道了， `ng-model` 是实现双向数据绑定的一个条件。`data.name` 这种写法表示的是 `data` 对象的 `name` 属性。所以，`ng-model="data.name"` 这句话的作用就是将data的name属性与输入框绑定。
 
 ## 测试
 
