@@ -37,3 +37,6 @@
   * [第三节:添加数据](3-teacher/3-create/readme.md)
     * [3.3.1:添加路由](3-teacher/3-create/1-add-route/readme.md)
     * [3.3.2:V层初始化](3-teacher/3-create/2-view-init/readme.md)
+    * [3.3.3:添加C层](3-teacher/3-create/3-controller/readme.md)
+    * [3.3.4:模拟提交](3-teacher/3-create/4-controller-submit-init/readme.md)
+    * [3.3.5:数据绑定](3-teacher/3-create/5-controller-data-bind/readme.md)
