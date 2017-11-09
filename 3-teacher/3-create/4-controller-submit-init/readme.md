@@ -16,7 +16,7 @@ angular.module('testApp')
 
 首先在`c`层写入`submit`方法，如下
 
-```
+```javascript
 angular.module('testApp')
   .controller('TeacherCreateCtrl', function($scope) {
     var submit = function() {};
@@ -47,7 +47,7 @@ angular.module('testApp')
 
 ### 验证
 
-打开前台的表单提交界面，如下图所示，会显示我们在`c`写好的`submit`方法，打开控制台，点击提交按钮，会在控制台上打印出`submit`。
+打开前台的表单提交界面，如下图所示，会显示我们在`c`中给`$scope`绑定的`submit`属性，打开控制台，点击提交按钮，会在控制台上打印出`submit`。
 
 ![](image/2017-11-09-15-46-23.png) 
 
