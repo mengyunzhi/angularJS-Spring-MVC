@@ -34,5 +34,6 @@
     * [3.2.5:操作数据表](3-teacher/2-read/5-link-table/readme.md)
     * [3.2.6:后台控制器](3-teacher/2-read/6-api-controller/readme.md)
     * [3.2.7:前后台对接](3-teacher/2-read/7-front-to-back/readme.md)
-    * [3.2.8:引入Bootstrap](3-teacher/2-read/8-bootstrap/readme.md)
-
+  * [第三节:添加数据](3-teacher/3-create/readme.md)
+    * [3.3.1:添加路由](3-teacher/3-create/1-add-route/readme.md)
+    * [3.3.2:V层初始化](3-teacher/3-create/2-view-init/readme.md)
