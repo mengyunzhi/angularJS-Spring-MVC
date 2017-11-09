@@ -11,7 +11,7 @@
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about/:id', {
+      .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
@@ -36,7 +36,7 @@
 
 1.在创建控制器时，我们首先要定义一下我们的我们的控制器属于那个模块，
 
-`angular.module('testApp')`为AngularJS 的模块定义，`testApp`为我们的模块名称。在`index.html`有定义。
+`angular.module('testApp')`为`AngularJS `的模块定义，`testApp`为我们的模块名称。在`index.html`有定义。
 
 ![](image/2017-11-09-08-48-17.png) 
 
@@ -55,7 +55,7 @@ angular.module('testApp')
 
 接着将我们写好的控制器写入我们的路由中。
 
-前面提到，我们在配置对象里面，使用`controller`属性来配置`c`层路由。
+前面提到，我们在配置对象里面，使用`controller`属性来配置`c`层路由，该属性的值是我们的控制器名称，代码如下。
 
 `controller: 'TeacherCreateCtrl'`
 
@@ -67,7 +67,7 @@ angular.module('testApp')
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about/:id', {
+      .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
@@ -89,7 +89,7 @@ angular.module('testApp')
 
 ![](image/2017-11-08-16-53-48.png) 
 
-如果没出现错误，至此为止，我们的c层添加路由完毕。
+如果没出现错误，至此为止，我们的`c`层添加路由完毕。
 
 ---
 
