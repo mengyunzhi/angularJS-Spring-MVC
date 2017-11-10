@@ -14,15 +14,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ConstructorRepositoryTest {
+public class TeacherRepositoryTest {
 
     @Autowired
-    private ConstructorRepository constructorRepository;
+    private TeacherRepository teacherRepository;
 
     @Test
     public void findAllTest() {
-        List<Constructor> constructors = (List<Constructor>) constructorRepository.findAll();
-        assertThat(constructors.size()).isEqualTo(2);
+        List<Teacher> teachers = (List<Teacher>) teacherRepository.findAll();
+        assertThat(teachers.size()).isEqualTo(2);
     }
 
 }
