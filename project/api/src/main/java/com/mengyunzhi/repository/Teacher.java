@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Constructor {
+public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -19,7 +19,14 @@ public class Constructor {
 
     private String username;
 
-    public Constructor() {
+    public Teacher() {
+    }
+
+    public Teacher(String name, Boolean sex, String email, String username) {
+        this.name = name;
+        this.sex = sex;
+        this.email = email;
+        this.username = username;
     }
 
     public Long getId() {
