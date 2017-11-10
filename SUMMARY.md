@@ -40,3 +40,6 @@
     * [3.3.3:添加C层](3-teacher/3-create/3-controller/readme.md)
     * [3.3.4:模拟提交](3-teacher/3-create/4-controller-submit-init/readme.md)
     * [3.3.5:数据绑定](3-teacher/3-create/5-controller-data-bind/readme.md)
+    * [3.3.6:发送请求](3-teacher/3-create/6-controller-post-data/readme.md)
+    * [3.3.7:后台控制器](3-teacher/3-create/7-api-controller/readme.md)
+    * [3.3.8:页面间跳转](3-teacher/3-create/8-link-add-to-index/readme.md)
