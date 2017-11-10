@@ -129,11 +129,8 @@ public class Application {
  ```registry.addMapping("/helloWorld").allowedOrigins("http://localhost:9000");``` 中"/helloWorld"要保证和后台和前台控制器的路由相同。
 
 2.修改后结果显示
-再次重启一下后台，再次查看控制台，控制台不会报错，实现了前后台连接。
 
-![](image/3.png)
-
-打开浏览器查看浏览器的控制台：
+再次重启一下后台，打开浏览器查看浏览器的控制台,控制台不会报错，实现了前后台连接。
 
 ![](image/2.png)
 
