@@ -9,7 +9,7 @@
  */
 angular.module('testApp')
   .controller('MainCtrl', function($scope, $http) {
-    var url = 'http://localhost:8080/Constructor/';
+    var url = 'http://localhost:8080/Teacher/';
     $http.get(url)
     .then(function success(response){
       $scope.data = response.data;

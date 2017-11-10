@@ -11,7 +11,7 @@ angular.module('testApp')
   .controller('AboutCtrl', function($scope, $http, $routeParams) {
   	console.log($routeParams);
   	var id = $routeParams.id;
-  	var url = 'http://localhost:8080/Constructor/' + id;
+  	var url = 'http://localhost:8080/Teacher/' + id;
   	$http.get(url)
   	.then(function success(response){
   		$scope.object = response.data;
