@@ -1,3 +1,0 @@
-
-@PathVariable
-rest client
