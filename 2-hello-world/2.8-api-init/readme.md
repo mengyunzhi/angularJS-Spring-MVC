@@ -146,7 +146,7 @@ maven项目创建好后，我们就要开始配置一下IDEA为我们创建的 `
 
 **parent：** 继承。我们建立的项目是继承了spring的框架。
 
-**dependencies和dependency：** 注入依赖。这里面添加我们的项目依赖。`<dependency>` 里写入需要以来的信息，然后都放入到 `<dependencies>` 中。以后我们还会添加很多依赖，都会以这种形式添加到项目中。
+**dependencies和dependency：** 注入依赖。这里面添加我们的项目依赖。`<dependency>` 里写入需要依赖的信息，然后都放入到 `<dependencies>` 中。以后我们还会添加很多依赖，都会以这种形式添加到项目中。
 
 我们现在添加了两个依赖，第一个是spring框架下的web项目依赖，第二个是spring的单元测试的依赖，这个我们后面会接触到。
 
@@ -180,7 +180,7 @@ public class Application {
 }
 ```
 
-> 在springMVC项目中我们将大量使用以 "@" 注解来进行声明。
+> <font size=20>在springMVC项目中我们将大量使用以 "@" 注解来进行声明。</font>
 
 **启动项目**
 
@@ -243,11 +243,16 @@ public class HelloWorld {
 
 ![test](image/2017-10-26.11.png)
 
-把 `Host/port` 改成 `http://localhost:8080`，在 `Path` 中写上 `helloWorld`， 点击左侧的绿色三角。然后就看到控制台中出现了我们期待的 `hello world api`。
+把 `Host/port` 改成 `http://localhost:8080`，在 `Path` 中写上 `helloWorld`，就是我们刚刚在控制器中设置好的路径， 点击左侧的绿色三角。然后就看到控制台中出现了我们期待的 `hello world api`。
 
 到此为止，我们的项目已经创建完毕。
 
+### 查看示例代码
+
+```bash
+git checkout -f 3.2.8-api-init
+```
 ---------------------------------------
 官方参考文档：[http://spring.io/guides/gs/rest-service/](http://spring.io/guides/gs/rest-service/)
 
-**作者：[朴世超](www.mengyunzhi.cn)** 
+***作者：[朴世超](www.mengyunzhi.cn)***
