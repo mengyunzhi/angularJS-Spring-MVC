@@ -1,10 +1,3 @@
-1.add method
-2.add router
-3.bind requestBody
-4.call save()
-5.test
-6.debug
-
 # 3.3.7 后台控制器
 
 ## 新建方法
