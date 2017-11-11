@@ -53,3 +53,5 @@
 当表单提交时(点击按钮)，就会触发`$scope`中的`submit`方法。
 
 `AngularJS`官网有对`ng-submit`的介绍，[ngSubmit-AngularJS](https://docs.angularjs.org/api/ng/directive/ngSubmit)
+
+*作者：张喜硕*
