@@ -43,3 +43,8 @@
     * [3.3.6:发送请求](3-teacher/3-create/6-controller-post-data/readme.md)
     * [3.3.7:后台控制器](3-teacher/3-create/7-api-controller/readme.md)
     * [3.3.8:页面间跳转](3-teacher/3-create/8-link-add-to-index/readme.md)
+  * [第四节:读取单条数据](3-teacher/4-read-one/readme.md)
+    * [3.4.1:前台路由](3-teacher/4-read-one/1-webapp-route/readme.md)
+    * [3.4.2:前台视图](3-teacher/4-read-one/2-webapp-view/readme.md)
+    * [3.4.3:前台控制器](3-teacher/4-read-one/3-webapp-controller/readme.md)
+    * [3.4.4:数据绑定](3-teacher/4-read-one/4-webapp-data-bind/readme.md)
