@@ -9,38 +9,37 @@
 
 ```javascript
 angular.module('testApp')
-  .controller('TeacherCreateCtrl', function($scope, $http) {
-  	$scope.data = {
-  		name: '',
-  		email: '',
-  		sex: '0',
-  		username: ''
-  	};
-    $scope.submit = function() {
-    	console.log('submit');
-        $http.post().then();
-    };
-  });
+    .controller('TeacherCreateCtrl', function($scope, $http) {
+        $scope.data = {
+            name: '',
+            email: '',
+            sex: '0',
+            username: ''
+        };
+        $scope.submit = function() {
+            console.log('submit');
+            $http.post().then();
+        };
+    });
 ```
 
 在这里我们的`post`方法包含两个参数，第一个参数是我们要请求的url路径，在这里为`http://127.0.0.1:8080/Teacher/`，第二个参数是将要发送给服务器的数据，这里为`$scope.data`,参数添加完成后代码如下
 
 ```javascript
 angular.module('testApp')
-  .controller('TeacherCreateCtrl', function($scope, $http) {
-    $scope.data = {
-      name: '',
-      email: '',
-      sex: '0',
-      username: ''
-    };
+    .controller('TeacherCreateCtrl', function($scope, $http) {
+        $scope.data = {
+            name: '',
+            email: '',
+            sex: '0',
+            username: ''
+        };
 
-    $scope.submit = function() {
-      var url = 'http://127.0.0.1:8080/Teacher/';
-      $http .post(url,$scope.data).then();
-    };
-
-  });
+        $scope.submit = function() {
+            var url = 'http://127.0.0.1:8080/Teacher/';
+            $http.post(url, $scope.data).then();
+        };
+    });
 ```
 
 为了查看我们的数据是否添加成功，我们要用`then()`接受服务器返回的信息，`then()`中有两个参数，分别是两个方法，返回成功执行第一个方法，在控制台打印`success`，返回失败执行第二个方法,在控制台打印`error`，代码如下。
@@ -53,26 +52,26 @@ angular.module('testApp')
 
 ```javascript
 angular.module('testApp')
-  .controller('TeacherCreateCtrl', function($scope, $http) {
-    $scope.data = {
-      name: '',
-      email: '',
-      sex: '0',
-      username: ''
-    };
+    .controller('TeacherCreateCtrl', function($scope, $http) {
+        $scope.data = {
+            name: '',
+            email: '',
+            sex: '0',
+            username: ''
+        };
 
-    $scope.submit = function() {
-      var url = 'http://127.0.0.1:8080/Teacher/';
-      $http
-        .post(url,$scope.data)
-        .then(function() {
-        	console.log('success');
-        }, function() {
-        	console.log('error');
-        });
-    };
+        $scope.submit = function() {
+            var url = 'http://127.0.0.1:8080/Teacher/';
+            $http
+                .post(url, $scope.data)
+                .then(function() {
+                    console.log('success');
+                }, function() {
+                    console.log('error');
+                });
+        };
 
-  });
+    });
 ```
 
 ### 测试
