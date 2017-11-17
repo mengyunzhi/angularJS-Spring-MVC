@@ -64,6 +64,12 @@ angular.module('testApp')
 
 最后，去除 `console.log()`。
 
+### 查看实例代码
+
+```bash
+git checkout -f 3.4.3-webapp-controller
+```
+
 -----------
 
 ***作者：[朴世超](www.mengyunzhi.com)***
