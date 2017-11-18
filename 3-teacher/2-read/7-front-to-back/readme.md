@@ -1,38 +1,24 @@
 # 前台显示后台传入数据
 
 
-## 浏览器显示传入数据
-
-#### 1.在数据库手动添加待检测数据
-
-- 第一步：打开workbench
-
-![](image/3.png)
-
-- 第二步：在页面左下角部分有一个teacher表，鼠标点击第三个标志，进行编辑操作
-
-![](image/1.png) 
+## 实现前后台连接
 
 
-- 第三步：添加2条数据
-
-![](image/4.png) 
-
----
-
-
-
-#### 2.修改控制器中和v层代码
-
-（1）前台controllers下main.js文件
+1.前台```controllers```下```main.js```文件改为如下代码：
 
 ```js
-    // 要修改部分
+angular.module('testApp')
+  .controller('MainCtrl', function($scope, $http) {
     var url = 'http://localhost:8080/Teacher/';
+    $http.get(url)
+      .then(function success(response) {
+        $scope.data = response.data;
+      }, function error(response) {
+        console.error('url:' + url, response);
+      });
+  });
 ```
-
-（2）前台views下main.html文件
-
+2.对v层代码进行一下修改
 ```html
 <div class="row marketing">
 {{data}}
@@ -53,69 +39,37 @@
     </tr>
   </table>
 </div>
+
 ```
+3.未添加数据时页面显示
+
+![](image/2.png)
 
 
-（3）后台controller文件夹下TeacherController文件
-
-```java
-package com.mengyunzhi.controller;
-
-import com.mengyunzhi.repository.Teacher;
-import com.mengyunzhi.repository.TeacherRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+## 在数据库手动添加待检测数据
 
 
-import java.util.List;
+- 第一步：打开workbench
 
-@RestController
-@RequestMapping("/Teacher")  // 第一部分
-public class TeacherController {
+![](image/3.png)
 
-    @Autowired
-    private TeacherRepository teacherRepository;
+- 第二步：在页面左下角部分有一个teacher表，鼠标点击第三个标志，进行编辑操作
 
-    @GetMapping("/") // 第二部分
-    public List<Teacher> getAll() {
-        List<Teacher> teachers = (List<Teacher>) teacherRepository.findAll();
-        return teachers;
-    }
-
-}
-```
-
-测试：
-在IDEA上方菜单，找到 Tools ，选择 Test RESTful Web Service，打开。
-点击运行，测试结果如下（此过程不用重启）:
-
-![](image/7.png) 
+![](image/1.png) 
 
 
-（4）修改Application文件内容
+- 第三步：添加2条数据
 
-主要改动：
-
-```java
-registry.addMapping("/Teacher/").allowedOrigins("http://localhost:9000");
-```
-
-也可以使用：
-```java
-registry.addMapping("/**").allowedOrigins("http://localhost:9000");
-```
-
-
-注意: 保证前台控制器和后台控制器对应url一致。
-
-#### 3.显示数据
-
-![](image/5.png) 
-
+![](image/4.png) 
 
 ---
+
+
+
+添加数据后显示结果：
+
+![](image/9.png)
+
 
 ## 引用boostrap样式
 
@@ -125,7 +79,7 @@ registry.addMapping("/**").allowedOrigins("http://localhost:9000");
 
 ```html
 <div class="row marketing">
-{{data}}
+  <pre>{{ data | json }}</pre>
   <table class="table">
     <tr>
       <th>id</th>
@@ -147,7 +101,7 @@ registry.addMapping("/**").allowedOrigins("http://localhost:9000");
 
 修改后效果如下：
 
-![](image/2.png) 
+![](image/10.png) 
 
 
 我还记得老师给我们的建议：若想成为一个bootstrap大神，你只需要一天20分钟的时间来浏览bootstrap的样式。[http://v3.bootcss.com/](http://v3.bootcss.com/) 
